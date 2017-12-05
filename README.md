@@ -2,7 +2,7 @@
 by Oran C
 20171204
 
-this project makes a calculator for
+Project makes a calculator for
 the raspberry pi that uses a physical keypad for imput
 
 
