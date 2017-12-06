@@ -7,11 +7,15 @@ package edu.srjc.Final.Oran.Collins;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
 /**
@@ -25,27 +29,28 @@ public class UIController implements Initializable
     private Label label;
 
     @FXML
-    private TextField txtName;
+    private TextField input;
 
     @FXML
-    private void handleButtonAction(ActionEvent event)
+    private void handleInput(KeyEvent e)
     {
-        System.out.println("You clicked me!");
-        if (txtName.getText().length() > 0)
-        {
-            label.setText("Hello there " + txtName.getText() + "!");
-        }
-        else
-        {
-            label.setText("Can't you follow directions?");
-        }
+
+        System.out.println("Can't you follow directions?" + e.getCharacter());
 
     }
-    
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+
+        input.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        public void handle(KeyEvent ke) {
+            System.out.println("Key Pressed: " + ke.getText());
+
+        }
+    });
     }    
     
 }
