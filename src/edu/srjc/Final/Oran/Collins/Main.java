@@ -12,27 +12,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-public class Main extends Application
+public class Main
+        //extends Application
 {
-    
-    @Override
-    public void start(Stage stage) throws Exception
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("UIView.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
+
+//    @Override
+//    public void start(Stage stage) throws Exception
+//    {
+//        Parent root = FXMLLoader.load(getClass().getResource("UIView.fxml"));
+//
+//        Scene scene = new Scene(root);
+//
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args)
     {
-        launch(args);
+        System.out.println("hello world");
+//        launch(args);
     }
-    
+
 }

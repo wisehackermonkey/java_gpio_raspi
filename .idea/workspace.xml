@@ -2,7 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/edu/srjc/Final/Oran/Collins/FXMLDocumentController.class" afterPath="$PROJECT_DIR$/build/classes/edu/srjc/Final/Oran/Collins/FXMLDocumentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/edu/srjc/Final/Oran/Collins/JavaFXApplicationTemplate.class" afterPath="$PROJECT_DIR$/build/classes/edu/srjc/Final/Oran/Collins/JavaFXApplicationTemplate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/JavaFXApplicationTemplate.jar" afterPath="$PROJECT_DIR$/dist/JavaFXApplicationTemplate.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/error.png" afterPath="$PROJECT_DIR$/dist/web-files/error.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/get_java.png" afterPath="$PROJECT_DIR$/dist/web-files/get_java.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/get_javafx.png" afterPath="$PROJECT_DIR$/dist/web-files/get_javafx.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/javafx-chrome.png" afterPath="$PROJECT_DIR$/dist/web-files/javafx-chrome.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/javafx-loading-100x100.gif" afterPath="$PROJECT_DIR$/dist/web-files/javafx-loading-100x100.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/javafx-loading-25x25.gif" afterPath="$PROJECT_DIR$/dist/web-files/javafx-loading-25x25.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/upgrade_java.png" afterPath="$PROJECT_DIR$/dist/web-files/upgrade_java.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/upgrade_javafx.png" afterPath="$PROJECT_DIR$/dist/web-files/upgrade_javafx.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/Main.class" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="$PROJECT_DIR$/.idea/description.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/JavaFXApplicationTemplate.xml" afterPath="$PROJECT_DIR$/.idea/libraries/JavaFXApplicationTemplate.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="$PROJECT_DIR$/.idea/project-template.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/template-meta.xml" afterPath="$PROJECT_DIR$/.idea/template-meta.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Final_Collins_Oran.iml" afterPath="$PROJECT_DIR$/Final_Collins_Oran.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/built-jar.properties" afterPath="$PROJECT_DIR$/build/built-jar.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/edu/srjc/Final/Oran/Collins/FXMLDocument.fxml" afterPath="$PROJECT_DIR$/build/classes/edu/srjc/Final/Oran/Collins/FXMLDocument.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/JavaFXApplicationTemplate.html" afterPath="$PROJECT_DIR$/dist/JavaFXApplicationTemplate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/JavaFXApplicationTemplate.jnlp" afterPath="$PROJECT_DIR$/dist/JavaFXApplicationTemplate.jnlp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/web-files/dtjava.js" afterPath="$PROJECT_DIR$/dist/web-files/dtjava.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.mf" afterPath="$PROJECT_DIR$/manifest.mf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIView.fxml" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,23 +48,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#257#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,6 +82,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/JavaFXApplicationTemplate.java" />
+        <option value="$PROJECT_DIR$/main.java" />
         <option value="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" />
       </list>
     </option>
@@ -240,20 +273,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13814181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13814181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -311,9 +346,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#257#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -335,11 +368,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#257#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -350,13 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -364,6 +388,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
