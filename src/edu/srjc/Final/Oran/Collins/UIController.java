@@ -8,15 +8,11 @@ package edu.srjc.Final.Oran.Collins;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Text;
 
 /**
  *
@@ -24,9 +20,14 @@ import javafx.scene.text.Text;
  */
 public class UIController implements Initializable
 {
-    
+    private String current_input = "";
+    private int result = 0;
+
+
+
+
     @FXML
-    private Label label;
+    private TextField output;
 
     @FXML
     private TextField input;
@@ -46,9 +47,41 @@ public class UIController implements Initializable
     {
 
         input.setOnKeyPressed(new EventHandler<KeyEvent>() {
-        public void handle(KeyEvent ke) {
-            System.out.println("Key Pressed: " + ke.getText());
+        public void handle(KeyEvent keypress)
+        {
 
+            String key = keypress.getText();
+
+            if (key.equals("+"))
+            {
+                System.out.println("T");
+                key = "";
+                result = Integer.parseInt(current_input);
+                current_input = "";
+
+            } if (keypress.getText().equals("c"))
+            {
+                System.out.println("T-c");
+                key = "";
+                current_input = "";
+                result = 0;
+
+            } else if (keypress.getCode().getName().equals("Enter"))
+            {
+                System.out.println("EXIT");
+                System.out.println(result + Integer.parseInt(current_input));
+            } else
+            {
+                System.out.println("F");
+                if (key.matches("[0-9+\\-*/]")){
+                    System.out.println("-T");
+                    current_input += key;
+                }else{
+                    System.out.println("-F: " + current_input);
+                }
+
+            }
+            System.out.println("Key Pressed: " + key + ", Keycode: " + keypress.getCode().getName() + ", Keystream: " + current_input);
         }
     });
     }    
