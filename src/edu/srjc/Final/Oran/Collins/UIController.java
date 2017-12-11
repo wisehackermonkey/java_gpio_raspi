@@ -19,19 +19,21 @@ import javafx.scene.input.KeyEvent;
  */
 // TODO: 12/10/2017 fix ui
 // TODO: 12/10/2017   prompt more descriptive
+// TODO: 12/11/2017   change location of history of op's '5+6' 
 // xTODO: 12/10/2017  output textbox
 // xTODO: 12/10/2017  text box select
 // xTODO: 12/10/2017 fix crash upon '++' instead of +
 // xTODO: 12/10/2017  crash "+" + <enter>
 // TODO: 12/10/2017 Add Delete
-// TODO: 12/10/2017 Generalize operators
-// TODO: 12/10/2017 Add *
-// TODO: 12/10/2017 Add /
-// TODO: 12/10/2017 Add -
+// xTODO: 12/10/2017 Generalize operators
+// xTODO: 12/10/2017 Add *
+// xTODO: 12/10/2017 Add /
+// TODO: 12/11/2017    fix rounding issues int result => float result
+// xTODO: 12/10/2017 Add -
 // TODO: 12/10/2017 change output on repeate enter clear screen
 // xTODO: 12/10/2017 Clear output upon pressing 'c' - clear
 // TODO: 12/10/2017  fix input leaving the 'c' character in the input!
-
+// TODO: 12/11/2017 add ANS +,-,*,/
 public class UIController implements Initializable
 {
 	private String current_input = "";
@@ -99,19 +101,18 @@ public class UIController implements Initializable
 			System.out.println("Key Input => '" + key + "'");
 
 
-			if (key.equals("+") && isNumeric(current_input))
+			if (key.matches("[+\\-*/]") && isNumeric(current_input))
 			{
+				switch (key){
+					case "+": math_op = Math_Op.plus; break;
+					case "-": math_op = Math_Op.minus; break;
+					case "*": math_op = Math_Op.multiply; break;
+					case "/": math_op = Math_Op.divide; break;
+				}
 				key = "";
 				result = Integer.parseInt(current_input);
 				current_input = "";
-				math_op = Math_Op.plus;
-			}
-			if (key.equals("*") && isNumeric(current_input))
-			{
-				key = "";
-				result = Integer.parseInt(current_input);
-				current_input = "";
-				math_op = Math_Op.multiply;
+
 			}
 
 			if (keypress.getText().equals("c"))
@@ -130,13 +131,18 @@ public class UIController implements Initializable
 				int current_number = Integer.parseInt(current_input);
 
 				switch (math_op){
-					case plus     : result = result + current_number; break;
-					case multiply : result = result * current_number; break;
+					case plus: result = result + current_number; break;
+					case minus:result = result - current_number; break;
+					case multiply: result = result * current_number; break;
+					case divide: result = Math.round(result / current_number); break;
 					default:
 						System.err.println("Operator Not Found!");
 				}
 				System.out.println("T- Is Enterkey input :" + result + "\n\n\n\n");
 				output.setText(String.valueOf(result));
+				current_input = "";
+				//result = 0;
+				input.setText("");
 			}else{
 				System.err.println("F- Is Enterkey input  numeric:fail!");
 			}
