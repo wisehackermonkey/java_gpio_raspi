@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="Fixed crash when pressing '++' &#10;Fixed crash when pressing '+' + &lt;enter&gt;&#10;     Note: a nice little unintended bug is that when pressing enter after '5+5' it keeps added five to the total!">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/Main.class" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/Main.class" />
+    <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIView.fxml" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,7 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-31" />
     <option name="y" value="-10" />
     <option name="width" value="1384" />
@@ -285,11 +280,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512973408865</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed crash when pressing '++' &#10;Fixed crash when pressing '+' + &lt;enter&gt;&#10;     Note: a nice little unintended bug is that when pressing enter after '5+5' it keeps added five to the total!&#10;Fixed Clear output upon pressing 'c' - clear&#10;Fixed output result&#10;&#10;added&#10;Got '*' and '+' Working!">
+      <created>1512979208225</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512979208225</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -354,7 +356,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added javafx bloat shit" />
     <MESSAGE value="Fixed crash when pressing '++' &#10;Fixed crash when pressing '+' + &lt;enter&gt;&#10;     Note: a nice little unintended bug is that when pressing enter after '5+5' it keeps added five to the total!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed crash when pressing '++' &#10;Fixed crash when pressing '+' + &lt;enter&gt;&#10;     Note: a nice little unintended bug is that when pressing enter after '5+5' it keeps added five to the total!" />
+    <MESSAGE value="Fixed crash when pressing '++' &#10;Fixed crash when pressing '+' + &lt;enter&gt;&#10;     Note: a nice little unintended bug is that when pressing enter after '5+5' it keeps added five to the total!&#10;Fixed Clear output upon pressing 'c' - clear&#10;Fixed output result&#10;&#10;added&#10;Got '*' and '+' Working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed crash when pressing '++' &#10;Fixed crash when pressing '+' + &lt;enter&gt;&#10;     Note: a nice little unintended bug is that when pressing enter after '5+5' it keeps added five to the total!&#10;Fixed Clear output upon pressing 'c' - clear&#10;Fixed output result&#10;&#10;added&#10;Got '*' and '+' Working!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
