@@ -10,32 +10,46 @@ import java.text.NumberFormat;
 import java.text.ParsePosition;
 import java.util.ResourceBundle;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-
 /**
  * wisemonkey
  */
 // TODO: 12/10/2017 fix ui
-// TODO: 12/10/2017  text box select
-// TODO: 12/10/2017 fix crash upon '++' instead of +
-// TODO: 12/10/2017  crash "+" + <enter>
+// TODO: 12/10/2017   prompt more descriptive
+// xTODO: 12/10/2017  output textbox
+// xTODO: 12/10/2017  text box select
+// xTODO: 12/10/2017 fix crash upon '++' instead of +
+// xTODO: 12/10/2017  crash "+" + <enter>
 // TODO: 12/10/2017 Add Delete
+// TODO: 12/10/2017 Generalize operators
 // TODO: 12/10/2017 Add *
 // TODO: 12/10/2017 Add /
 // TODO: 12/10/2017 Add -
+// TODO: 12/10/2017 change output on repeate enter clear screen
+// xTODO: 12/10/2017 Clear output upon pressing 'c' - clear
+// TODO: 12/10/2017  fix input leaving the 'c' character in the input!
 
 public class UIController implements Initializable
 {
 	private String current_input = "";
 	private int result = 0;
 
+	enum Math_Op
+	{
+		plus,
+		minus,
+		multiply,
+		divide,
+		None;
+	}
+	private Math_Op math_op = Math_Op.None;
 
 	@FXML
 	private TextField output;
+
 
 	@FXML
 	private TextField input;
@@ -69,10 +83,12 @@ public class UIController implements Initializable
 		return str.length() == pos.getIndex();
 	}
 
+
+
+
 	@Override
 	public void initialize(URL url, ResourceBundle rb)
 	{
-		String buffer = "";
 
 		input.setOnKeyPressed((KeyEvent keypress) ->
 		{
@@ -80,62 +96,59 @@ public class UIController implements Initializable
 			String key = keypress.getText();
 
 
-			if (key.equals(""))
-			{
-				System.out.println("T-input => ''");
-			} else
-			{
-				System.out.println("F-input => '" + key + "'");
-			}
+			System.out.println("Key Input => '" + key + "'");
 
 
-			if (key.equals("+"))
+			if (key.equals("+") && isNumeric(current_input))
 			{
-				System.out.println("T");
 				key = "";
-				if (isNumeric(current_input))
-				{
-					System.out.println("----T-isnumeric current input : " + current_input);
-					result = Integer.parseInt(current_input);
-					current_input = "";
-				} else
-				{
-					System.err.println("----F-isnumeric current input : " + current_input);
-				}
-
-
+				result = Integer.parseInt(current_input);
+				current_input = "";
+				math_op = Math_Op.plus;
+			}
+			if (key.equals("*") && isNumeric(current_input))
+			{
+				key = "";
+				result = Integer.parseInt(current_input);
+				current_input = "";
+				math_op = Math_Op.multiply;
 			}
 
-			if (keypress.getCode().getName().equals("Enter"))
-			{
-				System.out.println("EXIT");
-				if (isNumeric(current_input))
-				{
-
-					result = result + Integer.parseInt(current_input);
-					System.out.println("T- Is Enterkey input :" + result);
-				} else
-				{
-					System.out.println("F- Is Enterkey input  numeric:fail!");
-				}
-			}
-			if (key.matches("[0-9+\\-*/]"))
-			{
-				System.out.println("-T");
-				current_input += key;
-			} else
-			{
-				System.out.println("F: matches FAIL regex not number or +,-,/,* " + current_input);
-			}
 			if (keypress.getText().equals("c"))
 			{
 				System.out.println("T-c");
 				key = "";
 				current_input = "";
 				result = 0;
+				input.setText("");
+				math_op = Math_Op.None;
 
 			}
-			//System.out.println("Key Pressed: " + key + ", Keycode: " + keypress.getCode().getName() + ", Keystream: " + current_input);
+			if (keypress.getCode().getName().equals("Enter") && isNumeric(current_input))
+			{
+				System.out.println("Enter");
+				int current_number = Integer.parseInt(current_input);
+
+				switch (math_op){
+					case plus     : result = result + current_number; break;
+					case multiply : result = result * current_number; break;
+					default:
+						System.err.println("Operator Not Found!");
+				}
+				System.out.println("T- Is Enterkey input :" + result + "\n\n\n\n");
+				output.setText(String.valueOf(result));
+			}else{
+				System.err.println("F- Is Enterkey input  numeric:fail!");
+			}
+
+			if (key.matches("[0-9]") || key.matches("[+\\-*/]"))
+			{
+				System.out.println("T: matches TRUE regex not number or +,-,/,* " + current_input);
+				current_input += key;
+			} else
+			{
+				System.err.println("F: matches FAIL regex not number or +,-,/,* " + current_input);
+			}
 		});
 	}
 
