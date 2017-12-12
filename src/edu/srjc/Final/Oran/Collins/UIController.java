@@ -158,20 +158,11 @@ public class UIController implements Initializable
 
                 switch (math_op)
                 {
-                    case plus:
-                        result = result + current_number;
-                        break;
-                    case minus:
-                        result = result - current_number;
-                        break;
-                    case multiply:
-                        result = result * current_number;
-                        break;
-                    case divide:
-                        result = result / current_number;
-                        break;
-                    default:
-                        System.err.println("Operator Not Found!");
+                    case plus:      result = result + current_number;   break;
+                    case minus:     result = result - current_number;   break;
+                    case multiply:  result = result * current_number;   break;
+                    case divide:    result = result / current_number;   break;
+                    default:        System.err.println("Operator Not Found!");
                 }
                 System.out.println("T- Is Enterkey input :" + result + "\n\n\n\n");
                 output.setText(String.valueOf(result));
