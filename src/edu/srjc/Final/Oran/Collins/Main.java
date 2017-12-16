@@ -12,6 +12,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class Main extends Application
 {
 
@@ -34,6 +40,8 @@ public class Main extends Application
     {
         System.out.println("Calculator has started please wait...");
         launch(args);
+
+
     }
 
 }
