@@ -18,9 +18,10 @@ import javafx.scene.input.KeyEvent;
 /**
  * wisemonkey
  */
-// TODO: 12/11/2017 Comments 
+// TODO: 12/11/2017 Comments
 // TODO: 12/11/2017 polish this shit
 // TODO: 12/10/2017 fix ui
+// TODO: 12/15/2017   make pretty change colors
 // TODO: 12/10/2017   prompt more descriptive
 // TODO: 12/11/2017   change location of history of op's '5+6' 
 // xTODO: 12/10/2017  output textbox
