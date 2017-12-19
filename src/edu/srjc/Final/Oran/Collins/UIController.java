@@ -101,17 +101,30 @@ public class UIController implements Initializable
         return str.length() == pos.getIndex();
     }
 
-
-    private void alert(String message)
+    private void alert_set(String message, Alert.AlertType alert_type)
     {
         //http://stackoverflow.com/questions/28937392/ddg#36938061
-        Alert alert = new Alert(Alert.AlertType.ERROR, message, ButtonType.OK);
+        Alert alert = new Alert(alert_type, message, ButtonType.OK);
         alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
 
         alert.setX(0);
         alert.setY(0);
 
         alert.show();
+    }
+
+    //HELPER FUNCTIONS
+    public void print(String input)
+    {
+        System.out.println(input);
+    }
+    private void alert(String message)
+    {
+        alert_set(message, Alert.AlertType.INFORMATION);
+    }
+    private void error(String error_message)
+    {
+        alert_set(error_message, Alert.AlertType.ERROR);
     }
 
     private Collection get_serial_ports(SerialPort ports[])
@@ -141,7 +154,7 @@ public class UIController implements Initializable
         SerialPort ports[] = SerialPort.getCommPorts();
 
         if(ports.length == 0){
-            alert(" NO ARDUINO Plugged in!\n Fix: close program, plug in arduino\n to the usb open again");
+            error(" NO ARDUINO Plugged in!\n Fix: close program, plug in arduino\n to the usb open again");
         }else {
 
             System.out.println("select a port");
@@ -149,7 +162,20 @@ public class UIController implements Initializable
 
             port_selection.getItems().addAll(list_ports);
             port_selection.setOnAction((Event port_clicked) -> {
-                System.out.println(port_selection.getSelectionModel().getSelectedItem());
+                String port_selected = port_selection.getSelectionModel().getSelectedItem().toString();
+                alert(port_selected);
+                SerialPort arduino_port = SerialPort.getCommPort(port_selected);
+                if (arduino_port.openPort()) {
+                    arduino_port.setBaudRate(9600);
+                    arduino_port.setNumDataBits(8);
+                    arduino_port.setNumStopBits(1);
+                    arduino_port.setParity(1);
+                    byte[] buffer = null;
+                    arduino_port.readBytes(buffer, 1);// Read one byte
+                    String str = new String(buffer);
+                    print(String.format("#%s#%n",str));
+                    arduino_port.closePort();
+                }
             });
         }
     }
