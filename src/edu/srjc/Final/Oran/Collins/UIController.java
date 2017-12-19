@@ -28,6 +28,13 @@ import javafx.scene.layout.Region;
 /**
  * wisemonkey
  */
+// TODO: 12/19/17 Select serial port
+// xTODO: 12/19/17   desplay current serial ports
+// xTODO: 12/19/17   get click event from each populated
+// xTODO: 12/19/17   on click event start main loop
+// TODO: 12/19/17 get input from arduino
+// TODO: 12/19/17 rect to input from stored input
+
 // TODO: 12/11/2017 Comments
 // TODO: 12/11/2017 polish this shit
 // TODO: 12/10/2017 fix ui
@@ -126,7 +133,7 @@ public class UIController implements Initializable
     {
         alert_set(error_message, Alert.AlertType.ERROR);
     }
-
+//    https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     private Collection get_serial_ports(SerialPort ports[])
     {
         Collection<String> listPorts = new ArrayList();
@@ -143,12 +150,6 @@ public class UIController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO: 12/19/17 Select serial port
-        // TODO: 12/19/17   desplay current serial ports
-        // TODO: 12/19/17   get click event from each populated
-        // TODO: 12/19/17   on click event start main loop
-        // TODO: 12/19/17 get input from arduino
-        // TODO: 12/19/17 rect to input from stored input
         System.out.println("Calculator Started");
 
         SerialPort ports[] = SerialPort.getCommPorts();
