@@ -39,28 +39,31 @@ public class Main extends Application
      * @param args the command line arguments
      */
     public static void main(String[] args)
-    {
-        SerialPort ports[] = SerialPort.getCommPorts();
+    { 
+//        SerialPort ports[] = SerialPort.getCommPorts();
+//
+//        System.out.println("select a port");
+//        int i = 0;
+//        for (SerialPort port : ports)
+//        {
+//            System.out.println(i++ + ": " + port.getSystemPortName());
+//        }
+//
+//
+//        SerialPort comPort = SerialPort.getCommPorts()[0];
+//        comPort.openPort();
+//        comPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 100, 0);
+//        InputStream in = comPort.getInputStream();
+//        try
+//        {
+//            for (int j = 0; j < 1000; ++j)
+//                System.out.print((char)in.read());
+//            in.close();
+//        } catch (Exception e) { e.printStackTrace(); }
+//        comPort.closePort();
+//
 
-        System.out.println("select a port");
-        int i = 0;
-        for (SerialPort port : ports)
-        {
-            System.out.println(i++ + ": " + port.getSystemPortName());
-        }
 
-
-        SerialPort comPort = SerialPort.getCommPorts()[0];
-        comPort.openPort();
-        comPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 100, 0);
-        InputStream in = comPort.getInputStream();
-        try
-        {
-            for (int j = 0; j < 1000; ++j)
-                System.out.print((char)in.read());
-            in.close();
-        } catch (Exception e) { e.printStackTrace(); }
-        comPort.closePort();
 //        Scanner keyboard = new Scanner(System.in);
 //
 //        // TODO: 12/15/2017 Error handling
@@ -101,7 +104,7 @@ public class Main extends Application
 //        {
 //            for (int j = 0; j < 1000; j++)
 //            {
-//                System.out.print((char) in.read());
+//                 System.out.print((char) in.read());
 //            }
 //            in.close();
 //        }catch (Exception e){
@@ -119,7 +122,7 @@ public class Main extends Application
 //        }
         //System.err.print(String.format("ERROR %s%n",error.getMessage()));
 //        System.out.println("Calculator has started please wait...");
-//        launch(args);
+        launch(args);
     }
 
 }
