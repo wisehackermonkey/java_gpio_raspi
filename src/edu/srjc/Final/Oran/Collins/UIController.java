@@ -10,10 +10,17 @@ import java.text.NumberFormat;
 import java.text.ParsePosition;
 import java.util.ResourceBundle;
 
+import com.fazecast.jSerialComm.SerialPort;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Region;
 
 /**
  * wisemonkey
@@ -60,17 +67,20 @@ public class UIController implements Initializable
     @FXML
     private TextField output;
 
-
+//https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     @FXML
     private TextField input;
-
+    ObservableList<String> options =
+            FXCollections.observableArrayList(
+                    "Option 1",
+                    "Option 2",
+                    "Option 3"
+            );
     @FXML
-    private void handleInput(KeyEvent e)
-    {
+    private ComboBox port_selection = new ComboBox(options);
 
-        System.out.println("Can't you follow directions?" + e.getCharacter());
 
-    }
+
 
     //Helper functioncheck if string is numeric
     //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
@@ -89,13 +99,46 @@ public class UIController implements Initializable
     }
 
 
+    private void alert(String message)
+    {
+        //http://stackoverflow.com/questions/28937392/ddg#36938061
+        Alert alert = new Alert(Alert.AlertType.ERROR, message, ButtonType.OK);
+        alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
+
+        alert.setX(0);
+        alert.setY(0);
+
+        alert.show();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         // TODO: 12/19/17 Select serial port
-        
-        System.out.println("TODO");
+        // TODO: 12/19/17   desplay current serial ports
+        // TODO: 12/19/17   get click event from each populated
+        // TODO: 12/19/17   on click event start main loop
+        // TODO: 12/19/17 get input from arduino
+        // TODO: 12/19/17 rect to input from stored input
+        System.out.println("Calculator Started");
+
+        SerialPort ports[] = SerialPort.getCommPorts();
+
+        if(ports.length == 0){
+            alert(" NO ARDUINO Plugged in!\n Fix: close program, plug in arduino\n to the usb open again");
+        }else {
+
+            System.out.println("select a port");
+
+            int i = 0;
+            for (SerialPort port : ports) {
+                String port_name = port.getSystemPortName();
+                System.out.println(i++ + ": " + port_name);
+
+                port_selection.getItems().add(port_name);
+            }
+            port_selection.getItems().add("Com 2");
+        }
     }
 
 }
