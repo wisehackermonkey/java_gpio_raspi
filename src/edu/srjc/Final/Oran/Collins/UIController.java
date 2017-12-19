@@ -8,11 +8,14 @@ package edu.srjc.Final.Oran.Collins;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 import com.fazecast.jSerialComm.SerialPort;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -111,6 +114,19 @@ public class UIController implements Initializable
         alert.show();
     }
 
+    private Collection get_serial_ports(SerialPort ports[])
+    {
+        Collection<String> listPorts = new ArrayList();
+
+        int i = 0;
+        for (SerialPort port : ports) {
+            String port_name = port.getSystemPortName();
+            System.out.println(i++ + ": " + port_name);
+            listPorts.add(port_name);
+
+        }
+        return  listPorts;
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -129,15 +145,12 @@ public class UIController implements Initializable
         }else {
 
             System.out.println("select a port");
+            Collection  list_ports = get_serial_ports(ports);
 
-            int i = 0;
-            for (SerialPort port : ports) {
-                String port_name = port.getSystemPortName();
-                System.out.println(i++ + ": " + port_name);
-
-                port_selection.getItems().add(port_name);
-            }
-            port_selection.getItems().add("Com 2");
+            port_selection.getItems().addAll(list_ports);
+            port_selection.setOnAction((Event port_clicked) -> {
+                System.out.println(port_selection.getSelectionModel().getSelectedItem());
+            });
         }
     }
 
