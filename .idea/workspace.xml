@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,14 +17,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UIController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UIController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="469">
+              <caret line="94" column="32" lean-forward="false" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
               <folding>
-                <element signature="e#0#6118#0" expanded="true" />
+                <element signature="e#0#2681#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#2634#2635#0" expanded="true" />
+                <element signature="e#2676#2677#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="452">
@@ -93,8 +95,8 @@
         <option value="$PROJECT_DIR$/main.java" />
         <option value="/RegExp Fragment (UIController.java:1769).regexp" />
         <option value="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/MathOperators.java" />
-        <option value="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
         <option value="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" />
+        <option value="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
       </list>
     </option>
   </component>
@@ -438,8 +440,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -472,8 +476,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -506,8 +512,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,8 +578,10 @@
         <state relative-caret-position="901">
           <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -629,8 +639,10 @@
         <state relative-caret-position="197">
           <caret line="95" column="35" lean-forward="false" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -652,8 +664,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,8 +700,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,8 +736,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -754,8 +772,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -818,8 +838,10 @@
         <state relative-caret-position="901">
           <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#6118#0" expanded="true" />
+            <element signature="e#0#2681#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -872,17 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6118#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -891,6 +902,19 @@
             <element signature="e#0#1125#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1120#1121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="94" column="32" lean-forward="false" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#2681#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2634#2635#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
           </folding>
         </state>
       </provider>
