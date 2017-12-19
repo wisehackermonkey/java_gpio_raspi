@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="360.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.srjc.Final.Oran.Collins.UIController">
+<AnchorPane id="AnchorPane" prefHeight="394.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.srjc.Final.Oran.Collins.UIController">
     <children>
-      <TextField fx:id="output" alignment="BOTTOM_RIGHT" editable="false" focusTraversable="false" layoutX="20.0" layoutY="79.0" promptText="0">
+      <TextField fx:id="output" alignment="BOTTOM_RIGHT" editable="false" focusTraversable="false" layoutX="14.0" layoutY="117.0" promptText="0">
          <font>
             <Font size="37.0" />
          </font>
       </TextField>
-      <Label layoutX="36.0" layoutY="14.0" text="Calculator">
+      <Label layoutX="18.0" layoutY="40.0" text="Calculator">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <TextField fx:id="input" alignment="BOTTOM_RIGHT" layoutX="20.0" layoutY="173.0" onKeyPressed="#handleInput" promptText="0">
+      <TextField fx:id="input" alignment="BOTTOM_RIGHT" layoutX="14.0" layoutY="211.0" onKeyPressed="#handleInput" promptText="0">
          <font>
             <Font size="37.0" />
          </font>
@@ -26,14 +27,15 @@
             <Cursor fx:constant="SW_RESIZE" />
          </cursor>
       </TextField>
-      <Label layoutX="24.0" layoutY="297.0" text="Press keypad">
+      <Label layoutX="18.0" layoutY="335.0" text="Press keypad">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-        <Label fx:id="label" layoutX="20.0" layoutY="79.0" minHeight="16" minWidth="69" prefHeight="80.0" prefWidth="459.0" text="asdf" visible="false">
+        <Label fx:id="label" layoutX="14.0" layoutY="117.0" minHeight="16" minWidth="69" prefHeight="80.0" prefWidth="459.0" text="output_box" visible="false">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
+      <ComboBox layoutX="14.0" layoutY="14.0" prefWidth="150.0" promptText="Port" />
     </children>
 </AnchorPane>

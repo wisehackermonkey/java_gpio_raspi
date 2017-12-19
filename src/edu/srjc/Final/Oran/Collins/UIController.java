@@ -89,9 +89,12 @@ public class UIController implements Initializable
     }
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        // TODO: 12/19/17 Select serial port
+        
         System.out.println("TODO");
     }
 
