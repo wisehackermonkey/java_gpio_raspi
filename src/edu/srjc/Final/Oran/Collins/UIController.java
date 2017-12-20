@@ -136,7 +136,7 @@ public class UIController implements Initializable
 //    https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     private Collection get_serial_ports(SerialPort ports[])
     {
-        Collection<String> listPorts = new ArrayList();
+        Collection<String> listPorts = new ArrayList<>();
 
         int i = 0;
         for (SerialPort port : ports) {
@@ -172,9 +172,9 @@ public class UIController implements Initializable
                     arduino_port.setNumStopBits(1);
                     arduino_port.setParity(1);
                     byte[] buffer = null;
-                    arduino_port.readBytes(buffer, 1);// Read one byte
-                    String str = new String(buffer);
-                    print(String.format("#%s#%n",str));
+                   // arduino_port.readBytes(buffer, 1);// Read one byte
+                   // String str = new String(buffer);
+                   // print(String.format("#%s#%n",str));
                     arduino_port.closePort();
                 }
             });
