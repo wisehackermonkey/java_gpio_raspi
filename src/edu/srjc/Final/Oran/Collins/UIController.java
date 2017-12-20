@@ -8,11 +8,18 @@ package edu.srjc.Final.Oran.Collins;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import com.fazecast.jSerialComm.SerialPort;
+import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -24,6 +31,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Region;
+//import jssc.SerialPort;
+import jssc.*;
 
 /**
  * wisemonkey
@@ -133,25 +142,116 @@ public class UIController implements Initializable
     {
         alert_set(error_message, Alert.AlertType.ERROR);
     }
-//    https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
-    private Collection get_serial_ports(SerialPort ports[])
-    {
-        Collection<String> listPorts = new ArrayList<>();
 
-        int i = 0;
-        for (SerialPort port : ports) {
-            String port_name = port.getSystemPortName();
-            System.out.println(i++ + ": " + port_name);
-            listPorts.add(port_name);
-
-        }
-        return  listPorts;
-    }
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         System.out.println("Calculator Started");
+//        SerialPort serialPort = new SerialPort();
+//
+//        SerialPort test = new SerialPort("/dev/ttyACM0");
+//
+//                    test.addEventListener(event -> {
+//                        if(event.isRXCHAR()) {
+//                            try {
+//                                StringBuilder sb = null;
+//                                sb.append(test.readString(event.getEventValue()));
+//                                String str = sb.toString();
+//
+//                                if(str.endsWith("\r\n")) {
+//                                    line.set(Long.toString(time.getTime()).concat(":").concat(
+//                                            str.substring(0, str.indexOf("\r\n"))));
+//                                     sb = new StringBuilder();
+//                                }
+//                            } catch (SerialPortException ex) {
+//                                Logger.getLogger(SerialComm.class.getName()).log(Level.SEVERE, null, ex);
+//                            }
+//                        }
+//                    });
+//
+//            } catch (Exception e) {
+//                    System.err.println(e.toString());
+//                    }
 
+        }
+
+//        https://stackoverflow.com/questions/29719405/serial-connection-arduino-java#29720451
+    public class SerialComm  implements SerialPortEventListener {
+        Date time = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("mm");
+
+        boolean connected;
+        StringBuilder sb;
+        private SerialPort serialPort;
+
+        final StringProperty line = new SimpleStringProperty("");
+
+        //Not sure this is necessary
+        private static final String [] PORT_NAMES = {
+                "/dev/tty.usbmodem1411", // Mac OS X
+                "COM11", // Windows
+        };
+        //Baud rate of communication transfer with serial device
+        public static final int DATA_RATE = 9600;
+
+        //Create a connection with the serial device
+        public boolean connect() {
+            String [] ports = SerialPortList.getPortNames();
+            //First, Find an instance of serial port as set in PORT_NAMES.
+            for (String port : ports) {
+                System.out.print("Ports: " + port);
+                serialPort = new SerialPort(port);
+            }
+            if (serialPort == null) {
+                System.out.println("Could not find device.");
+                return false;
+            }
+
+            //Operation to perform is port is found
+            try {
+                // open serial port
+                if(serialPort.openPort()) {
+                    System.out.println("Connected");
+                    // set port parameters
+                    serialPort.setParams(DATA_RATE,
+                            SerialPort.DATABITS_8,
+                            SerialPort.STOPBITS_1,
+                            SerialPort.PARITY_NONE);
+                    serialPort.setEventsMask(SerialPort.MASK_RXCHAR);
+
+                    serialPort.addEventListener(event -> {
+                        if(event.isRXCHAR()) {
+                            try {
+                                sb.append(serialPort.readString(event.getEventValue()));
+                                String str = sb.toString();
+                                if(str.endsWith("\r\n")) {
+                                    line.set(Long.toString(time.getTime()).concat(":").concat(
+                                            str.substring(0, str.indexOf("\r\n"))));
+                                    System.out.println("line" + line);
+
+                                    sb = new StringBuilder();
+                                }
+                            } catch (SerialPortException ex) {
+                                Logger.getLogger(SerialComm.class.getName()).log(Level.SEVERE, null, ex);                    }
+                        }
+                    });
+                }
+            } catch (Exception e) {
+                System.out.println("ErrOr");
+                e.printStackTrace();
+                System.err.println(e.toString());
+            }
+            return serialPort != null;
+        }
+
+        @Override
+        public void serialEvent(SerialPortEvent spe) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        public StringProperty getLine() {
+            return line;
+        }
     }
 
 }
