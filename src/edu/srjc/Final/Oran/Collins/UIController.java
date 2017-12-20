@@ -152,33 +152,6 @@ public class UIController implements Initializable
     {
         System.out.println("Calculator Started");
 
-        SerialPort ports[] = SerialPort.getCommPorts();
-
-        if(ports.length == 0){
-            error(" NO ARDUINO Plugged in!\n Fix: close program, plug in arduino\n to the usb open again");
-        }else {
-
-            System.out.println("select a port");
-            Collection  list_ports = get_serial_ports(ports);
-
-            port_selection.getItems().addAll(list_ports);
-            port_selection.setOnAction((Event port_clicked) -> {
-                String port_selected = port_selection.getSelectionModel().getSelectedItem().toString();
-                alert(port_selected);
-                SerialPort arduino_port = SerialPort.getCommPort(port_selected);
-                if (arduino_port.openPort()) {
-                    arduino_port.setBaudRate(9600);
-                    arduino_port.setNumDataBits(8);
-                    arduino_port.setNumStopBits(1);
-                    arduino_port.setParity(1);
-                    byte[] buffer = null;
-                   // arduino_port.readBytes(buffer, 1);// Read one byte
-                   // String str = new String(buffer);
-                   // print(String.format("#%s#%n",str));
-                    arduino_port.closePort();
-                }
-            });
-        }
     }
 
 }
