@@ -174,8 +174,7 @@ public class UIController implements Initializable
 //                    }
 
         }
-
-//        https://stackoverflow.com/questions/29719405/serial-connection-arduino-java#29720451
+//  https://stackoverflow.com/questions/29719405/serial-connection-arduino-java#29720451
     public class SerialComm  implements SerialPortEventListener {
         Date time = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("mm");
@@ -187,7 +186,7 @@ public class UIController implements Initializable
         final StringProperty line = new SimpleStringProperty("");
 
         //Not sure this is necessary
-        private static final String [] PORT_NAMES = {
+        private  final String [] PORT_NAMES = {
                 "/dev/tty.usbmodem1411", // Mac OS X
                 "COM11", // Windows
         };

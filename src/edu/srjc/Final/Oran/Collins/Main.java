@@ -8,17 +8,11 @@
 package edu.srjc.Final.Oran.Collins;
 //https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/
 //https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
-import com.fazecast.jSerialComm.SerialPortDataListener;
-import com.fazecast.jSerialComm.SerialPortEvent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import com.fazecast.jSerialComm.SerialPort;
-
-import java.io.InputStream;
-import java.util.Scanner;
 
 public class Main extends Application
 {
