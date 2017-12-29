@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="" />
+    <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController$SerialComm.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,20 +24,14 @@
       <file leaf-file-name="UIController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2104">
-              <caret line="217" column="52" lean-forward="true" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
+            <state relative-caret-position="176">
+              <caret line="145" column="49" lean-forward="false" selection-start-line="145" selection-start-column="49" selection-end-line="145" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4108#4109#0" expanded="true" />
-                <element signature="e#4149#4150#0" expanded="true" />
-                <element signature="e#4194#4195#0" expanded="true" />
-                <element signature="e#4257#4258#0" expanded="true" />
-                <element signature="e#4308#4309#0" expanded="true" />
-                <element signature="e#4371#4372#0" expanded="true" />
-                <element signature="e#8718#8719#0" expanded="true" />
-                <element signature="e#8803#8804#0" expanded="true" />
-                <element signature="e#8846#8847#0" expanded="true" />
-                <element signature="e#8881#8882#0" expanded="true" />
+                <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+                <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+                <element signature="e#4344#4345#0" expanded="true" />
+                <element signature="e#4403#4404#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,8 +40,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="33" column="7" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,11 +95,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="287" />
-    <option name="y" value="37" />
-    <option name="width" value="657" />
-    <option name="height" value="761" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="854" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -145,14 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
+  <component name="RunManager" selected="Application.JavaFX Template Config">
     <configuration name="JavaFX Template Config" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="edu.srjc.Final.Oran.Collins.Main" />
@@ -160,12 +152,19 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-9-oracle" />
+      <option name="ALTERNATIVE_JRE_PATH" value="9.0" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Final_Collins_Oran" />
       <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -201,6 +200,12 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -234,12 +239,6 @@
       <envs />
       <properties />
       <listeners />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -304,7 +303,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="331" y="-4" width="1320" height="783" extended-state="6" />
+    <frame x="-7" y="0" width="854" height="1017" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -314,7 +314,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.50490195" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32243684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45132744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.49509802" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -376,7 +376,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -394,28 +402,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -431,28 +433,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -470,13 +466,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -492,16 +488,10 @@
           <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -539,13 +529,13 @@
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/MathOperators.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
@@ -554,16 +544,10 @@
           <caret line="95" column="35" lean-forward="false" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -581,28 +565,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -618,28 +596,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -655,28 +627,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -692,28 +658,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -731,13 +691,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="30" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
@@ -753,16 +713,10 @@
           <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -800,13 +754,13 @@
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/MathOperators.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
           <caret line="39" column="15" lean-forward="false" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jssc-2.8.0.jar!/jssc/SerialPort.class">
@@ -825,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="33" column="7" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -835,20 +789,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2104">
-          <caret line="217" column="52" lean-forward="true" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
+        <state relative-caret-position="176">
+          <caret line="145" column="49" lean-forward="false" selection-start-line="145" selection-start-column="49" selection-end-line="145" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4108#4109#0" expanded="true" />
-            <element signature="e#4149#4150#0" expanded="true" />
-            <element signature="e#4194#4195#0" expanded="true" />
-            <element signature="e#4257#4258#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#8718#8719#0" expanded="true" />
-            <element signature="e#8803#8804#0" expanded="true" />
-            <element signature="e#8846#8847#0" expanded="true" />
-            <element signature="e#8881#8882#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
+            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
           </folding>
         </state>
       </provider>
