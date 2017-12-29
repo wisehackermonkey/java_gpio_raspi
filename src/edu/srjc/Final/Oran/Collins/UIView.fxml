@@ -15,7 +15,7 @@
             <Font size="37.0" />
          </font>
       </TextField>
-      <Label layoutX="14.0" layoutY="14.0" text="Calculator">
+      <Label layoutX="14.0" text="Calculator">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -37,7 +37,15 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <ComboBox fx:id="port_selection" layoutX="14.0" layoutY="83.0" prefWidth="150.0" promptText="Port" />
-      <Button fx:id="btn_connect" layoutX="172.0" layoutY="83.0" mnemonicParsing="false" onAction="#btn_connect_press" prefHeight="25.0" prefWidth="117.0" text="Connect" />
+      <ComboBox fx:id="port_selection" layoutX="14.0" layoutY="65.0" prefHeight="39.0" prefWidth="150.0" promptText="Port" />
+      <Button fx:id="btn_connect" layoutX="171.0" layoutY="65.0" mnemonicParsing="false" onAction="#btn_connect_press" prefHeight="39.0" prefWidth="129.0" text="Connect">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btnRefresh" layoutX="381.0" layoutY="65.0" mnemonicParsing="false" onAction="#setBtnRefresh_handler" prefHeight="39.0" prefWidth="92.0" text="Refresh">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

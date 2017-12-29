@@ -10,6 +10,7 @@ import java.text.NumberFormat;
 import java.text.ParsePosition;
 
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +19,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+
+//download link
+//http://fazecast.github.io/jSerialComm/
+//documentation
+//http://fazecast.github.io/jSerialComm/javadoc/index.html
 import com.fazecast.jSerialComm.SerialPort;
 
 /**
@@ -61,32 +67,35 @@ public class UIController implements Initializable
 
     enum Math_Op
     {
-        plus,
-        minus,
-        multiply,
-        divide,
-        None;
+        plus, minus, multiply, divide, None;
     }
 
     private Math_Op math_op = Math_Op.None;
 
     @FXML
     private TextField output;
+
     @FXML
     private Button btn_connect;
-    //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
+
+    @FXML
+    private Button btnRefresh;
+
     @FXML
     private TextField input;
     ObservableList<String> options = FXCollections.observableArrayList();
+
+
+    //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     @FXML
-    private ComboBox port_selection = new ComboBox(options);
+    private ComboBox<String> port_selection = new ComboBox<>(options);
 
 
     //Helper functioncheck if string is numeric
     //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
-    private static boolean isNumeric(String str)
+    private static boolean isNumeric( String str )
     {
-        if (str.isEmpty())
+        if(str.isEmpty())
         {
             System.err.println("isNumeric(): is empty!=> " + str);
             return false;
@@ -98,7 +107,7 @@ public class UIController implements Initializable
         return str.length() == pos.getIndex();
     }
 
-    private void alert_set(String message, Alert.AlertType alert_type)
+    private void alert_set( String message, Alert.AlertType alert_type )
     {
         //http://stackoverflow.com/questions/28937392/ddg#36938061
         Alert alert = new Alert(alert_type, message, ButtonType.OK);
@@ -111,17 +120,17 @@ public class UIController implements Initializable
     }
 
     //HELPER FUNCTIONS
-    public void print(String input)
+    public void print( String input )
     {
         System.out.println(input);
     }
 
-    private void alert(String message)
+    private void alert( String message )
     {
         alert_set(message, Alert.AlertType.INFORMATION);
     }
 
-    private void error(String error_message)
+    private void error( String error_message )
     {
         alert_set(error_message, Alert.AlertType.ERROR);
     }
@@ -130,49 +139,102 @@ public class UIController implements Initializable
     private void btn_connect_press()
     {
         System.out.print(String.format("Connect Button Pressed%n"));
-        if (btn_connect.getText().equals("Connect"))
+        if(btn_connect.getText().equals("Connect"))
         {
 
-            if (port_selection.getValue() == null)
+            if(port_selection.getValue() == null)
             {
                 error("Serial Port Not Selected: Please select a port");
             } else
             {
-                String portName = port_selection.getValue().toString();
+                String portName = port_selection.getValue();
 
                 serialPort = SerialPort.getCommPort(portName);
 
+                //set port to scanner mode lets reading in characters without quitting early
+                serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
+
                 //open port
-                if (serialPort.openPort())
+                // TODO: 12/28/2017 error handling
+                if(serialPort.openPort())
                 {
                     alert(String.format("Port Connected!: %s %n", portName));
                     btn_connect.setText("Disconnect");
+//                    https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
                     port_selection.setEditable(false);
                 }
+                Thread thread = new Thread()
+                {
+                    @Override
+                    public void run()
+                    {
+                        if(serialPort.getInputStream() == null){
+                            //error("Error occurred when tring to connect to port:" +
+                              //      "Try another port");
+                            error(String.format("Error Occurred when trying to connect to port:%n Is the Arduino Connected? %n or try connecting to a different port%n"));
+                        }
+                        else
+                        {
+                            Scanner keypressed = new Scanner(serialPort.getInputStream());
+
+                            while(keypressed.hasNext())
+                            {
+                                try
+                                {
+                                    String line = keypressed.nextLine();
+                                    if(line.matches("[ABCD0123456789#*]"))
+                                    {
+                                        System.out.println(line);
+                                    }
+                                }
+                                catch(Exception err)
+                                {
+                                    System.err.println("Exception: Reading Arduino serial port");
+                                    keypressed.close();
+                                }
+                            }
+                        }
+                    }
+                };
+                //close text input monitoring thread when closing the program
+                //https://stackoverflow.com/questions/14897194/stop-threads-before-close-my-javafx-program#20374691
+                thread.setDaemon(true);
+                //start a new thread the monitors the serial characters coming in from arduino keypad
+                thread.start();
             }
 
-        }
-        else
+        } else
         {
             serialPort.closePort();
-            port_selection.setEditable(true);
             btn_connect.setText("Connect");
+            port_selection.setEditable(true);
+
         }
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
+    @FXML
+    private void setBtnRefresh_handler()
     {
-        System.out.println("Calculator Started");
+        getSerialPorts();
+    }
+    private void getSerialPorts()
+    {
+        options = FXCollections.observableArrayList();
         SerialPort[] portNames = SerialPort.getCommPorts();
-        for (int i = 0; i < portNames.length; i++)
+        for(int i = 0; i < portNames.length; i++)
         {
             String portname = portNames[i].getSystemPortName();
             options.add(portname);
             port_selection.setItems(options);
         }
+    }
 
+    @Override
+    public void initialize( URL url, ResourceBundle rb )
+    {
+        System.out.println("Calculator Started");
+
+        getSerialPorts();
     }
 
 }

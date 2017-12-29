@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8329eb6c-b4db-4790-8f17-ffee0c68a47b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController$Math_Op.class" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController$Math_Op.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" afterPath="$PROJECT_DIR$/out/production/Final_Collins_Oran/edu/srjc/Final/Oran/Collins/UIController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" afterPath="$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,12 +26,17 @@
       <file leaf-file-name="UIController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="147" column="57" lean-forward="false" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+            <state relative-caret-position="317">
+              <caret line="183" column="60" lean-forward="false" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-                <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+                <element signature="e#3933#3934#0" expanded="true" />
+                <element signature="e#3996#3997#0" expanded="true" />
+                <element signature="e#5150#6675#0" expanded="true" />
+                <element signature="e#6674#6675#0" expanded="true" />
+                <element signature="e#7284#7285#0" expanded="true" />
+                <element signature="e#7316#7317#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,11 +58,9 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,11 +80,13 @@
       <find>comPort</find>
       <find>serialPort</find>
       <find>arduino_port</find>
+      <find>btn_connect</find>
     </findStrings>
     <replaceStrings>
       <replace>port</replace>
       <replace>arduino_port</replace>
       <replace>port_selected</replace>
+      <replace>btnConnect</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -104,7 +115,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="829" />
+    <option name="width" value="694" />
     <option name="height" value="1017" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -158,7 +169,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jSerialComm.jar!/" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
@@ -337,7 +348,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="829" height="1017" extended-state="0" />
+    <frame x="-7" y="0" width="694" height="1017" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -348,7 +359,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.50490195" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46197504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1906924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.49509802" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -436,7 +447,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -465,7 +481,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -518,7 +539,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -572,7 +598,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -591,7 +622,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -620,7 +656,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -649,7 +690,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -678,7 +724,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,7 +782,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -795,22 +851,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/srjc/Final/Oran/Collins/UIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="147" column="57" lean-forward="false" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+        <state relative-caret-position="317">
+          <caret line="183" column="60" lean-forward="false" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#isNumeric#0;class#UIController#0" expanded="false" />
-            <element signature="method#alert_set#0;class#UIController#0" expanded="false" />
+            <element signature="e#3933#3934#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+            <element signature="e#5150#6675#0" expanded="true" />
+            <element signature="e#6674#6675#0" expanded="true" />
+            <element signature="e#7284#7285#0" expanded="true" />
+            <element signature="e#7316#7317#0" expanded="true" />
           </folding>
         </state>
       </provider>
