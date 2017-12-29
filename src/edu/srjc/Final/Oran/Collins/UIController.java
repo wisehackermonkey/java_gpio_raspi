@@ -64,6 +64,8 @@ public class UIController implements Initializable
     private String current_input = "";
     private double result = 0;
     private static SerialPort serialPort;
+    ObservableList<String> options = FXCollections.observableArrayList();
+
 
     enum Math_Op
     {
@@ -83,7 +85,7 @@ public class UIController implements Initializable
 
     @FXML
     private TextField input;
-    ObservableList<String> options = FXCollections.observableArrayList();
+
 
 
     //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
@@ -185,6 +187,9 @@ public class UIController implements Initializable
                                     if(line.matches("[ABCD0123456789#*]"))
                                     {
                                         System.out.println(line);
+                                        current_input += line;
+                                        input.setText(current_input);
+
                                     }
                                 }
                                 catch(Exception err)
