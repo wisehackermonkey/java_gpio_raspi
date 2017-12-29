@@ -8,28 +8,16 @@ package edu.srjc.Final.Oran.Collins;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import javafx.application.Platform;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ObservableValue;
+import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Region;
-//import jssc.SerialPort;
-import jssc.*;
+import com.fazecast.jSerialComm.SerialPort;
 
 /**
  * wisemonkey
@@ -68,6 +56,7 @@ public class UIController implements Initializable
 {
     private String current_input = "";
     private double result = 0;
+    private static SerialPort serialPort;
 
     enum Math_Op
     {
@@ -87,12 +76,7 @@ public class UIController implements Initializable
 //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     @FXML
     private TextField input;
-    ObservableList<String> options =
-            FXCollections.observableArrayList(
-                    "Option 1",
-                    "Option 2",
-                    "Option 3"
-            );
+    ObservableList<String> options = FXCollections.observableArrayList();
     @FXML
     private ComboBox port_selection = new ComboBox(options);
 
@@ -142,13 +126,33 @@ public class UIController implements Initializable
     }
     
     @FXML
-    private void btn_connect_press(){
-        System.out.print(String.format("works!%n"));
+    private void btn_connect_press()
+    {
+        System.out.print(String.format("Connect Button Pressed"));
+        if(btn_connect.getText().equals("Connect")){
+//
+//            serialPort = SerialPort.getCommPort();
+//            if(serialPort.openPort()){
+//                btn_connect.setText("Disconnect");
+//                port_selection.setEditable(false);
+//            }
+
+        }
     }
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         System.out.println("Calculator Started");
+        SerialPort[] portNames = SerialPort.getCommPorts();
+        for (int i = 0; i < portNames.length; i++)
+        {
+            String portname = portNames[i].getSystemPortName();
+            options.add(portname);
+            port_selection.setItems(options);
+        }
 
     }
 
