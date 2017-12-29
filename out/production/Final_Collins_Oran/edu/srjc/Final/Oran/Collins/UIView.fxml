@@ -28,7 +28,7 @@
             <Cursor fx:constant="SW_RESIZE" />
          </cursor>
       </TextField>
-      <Label layoutX="18.0" layoutY="335.0" text="Press keypad">
+      <Label fx:id="message" layoutX="18.0" layoutY="335.0" text="Press keypad">
          <font>
             <Font size="28.0" />
          </font>

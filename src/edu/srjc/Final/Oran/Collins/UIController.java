@@ -25,6 +25,7 @@ import javafx.scene.layout.Region;
 //documentation
 //http://fazecast.github.io/jSerialComm/javadoc/index.html
 import com.fazecast.jSerialComm.SerialPort;
+import edu.srjc.Final.Oran.Collins.Calculator;
 
 /**
  * wisemonkey
@@ -47,7 +48,7 @@ import com.fazecast.jSerialComm.SerialPort;
 // xTODO: 12/10/2017 fix crash upon '++' instead of +
 // xTODO: 12/10/2017  crash "+" + <enter>
 // TODO: 12/10/2017 Add Delete
-// TODO: 12/11/2017     fix crash when no input
+// xTODO: 12/11/2017     fix crash when no input
 // xTODO: 12/10/2017 Generalize operators
 // xTODO: 12/10/2017 Add *
 // xTODO: 12/10/2017 Add /
@@ -55,17 +56,29 @@ import com.fazecast.jSerialComm.SerialPort;
 // xTODO: 12/10/2017 Add -
 // TODO: 12/10/2017 change output on repeate enter clear screen
 // xTODO: 12/10/2017 Clear output upon pressing 'c' - clear
-// TODO: 12/11/2017     fix clear showing the c character
-// TODO: 12/10/2017  fix input leaving the 'c' character in the input!
-// TODO: 12/11/2017 add ANS +,-,*,/
-// TODO: 12/11/2017 add raspberry pi
+// xTODO: 12/11/2017     fix clear showing the c character
+// xTODO: 12/10/2017  fix input leaving the 'c' character in the input!
+// xTODO: 12/11/2017 add ANS +,-,*,/
+// xTODO: 12/11/2017 add raspberry pi
+
+
+
+// TODO: 12/28/2017 if # than get result
+// TODO: 12/28/2017 if 0-9 add to number
+// TODO: 12/28/2017 if 'A' parse current input, then set math op to 'PLUS'
+// TODO: 12/28/2017 if 'B' parse, math = 'Sub'
+// TODO: 12/28/2017 if 'C' parse, math = 'times'
+// TODO: 12/28/2017 if 'D' parse, math = 'divide'
+// TODO: 12/28/2017 if '*' delete last character,
+// TODO: 12/28/2017 if '#' parse cuurent input, add to 'result' + input = 'result'
+// TODO: 12/28/2017 UI create 'clear button'
 public class UIController implements Initializable
 {
     private String current_input = "";
     private double result = 0;
     private static SerialPort serialPort;
     ObservableList<String> options = FXCollections.observableArrayList();
-
+    private static Calculator calculator = new Calculator();
 
     enum Math_Op
     {
@@ -86,6 +99,8 @@ public class UIController implements Initializable
     @FXML
     private TextField input;
 
+    @FXML
+    private Label message;
 
 
     //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
@@ -93,21 +108,7 @@ public class UIController implements Initializable
     private ComboBox<String> port_selection = new ComboBox<>(options);
 
 
-    //Helper functioncheck if string is numeric
-    //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
-    private static boolean isNumeric( String str )
-    {
-        if(str.isEmpty())
-        {
-            System.err.println("isNumeric(): is empty!=> " + str);
-            return false;
-        }
 
-        NumberFormat formatter = NumberFormat.getInstance();
-        ParsePosition pos = new ParsePosition(0);
-        formatter.parse(str, pos);
-        return str.length() == pos.getIndex();
-    }
 
     private void alert_set( String message, Alert.AlertType alert_type )
     {
@@ -160,7 +161,7 @@ public class UIController implements Initializable
                 // TODO: 12/28/2017 error handling
                 if(serialPort.openPort())
                 {
-                    alert(String.format("Port Connected!: %s %n", portName));
+                    message.setText(String.format("Port Connected!: %s %n", portName));
                     btn_connect.setText("Disconnect");
 //                    https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
                     port_selection.setEditable(false);
@@ -186,10 +187,13 @@ public class UIController implements Initializable
                                     String line = keypressed.nextLine();
                                     if(line.matches("[ABCD0123456789#*]"))
                                     {
-                                        System.out.println(line);
-                                        current_input += line;
-                                        input.setText(current_input);
 
+                                        calculator.setTextInput(line);
+
+                                        input.setText(calculator.getCurrent_input());
+                                        output.setText(calculator.getResult());
+
+                                        System.out.print(String.format("In: %s, Text: %s, Result: %s%n",line,calculator.getCurrent_input(), calculator.getResult()));
                                     }
                                 }
                                 catch(Exception err)
