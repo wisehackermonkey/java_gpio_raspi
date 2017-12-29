@@ -10,6 +10,7 @@ import java.text.NumberFormat;
 import java.text.ParsePosition;
 
 import java.util.ResourceBundle;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -73,14 +74,12 @@ public class UIController implements Initializable
     private TextField output;
     @FXML
     private Button btn_connect;
-//https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
+    //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     @FXML
     private TextField input;
     ObservableList<String> options = FXCollections.observableArrayList();
     @FXML
     private ComboBox port_selection = new ComboBox(options);
-
-
 
 
     //Helper functioncheck if string is numeric
@@ -116,30 +115,50 @@ public class UIController implements Initializable
     {
         System.out.println(input);
     }
+
     private void alert(String message)
     {
         alert_set(message, Alert.AlertType.INFORMATION);
     }
+
     private void error(String error_message)
     {
         alert_set(error_message, Alert.AlertType.ERROR);
     }
-    
+
     @FXML
     private void btn_connect_press()
     {
-        System.out.print(String.format("Connect Button Pressed"));
-        if(btn_connect.getText().equals("Connect")){
-//
-//            serialPort = SerialPort.getCommPort();
-//            if(serialPort.openPort()){
-//                btn_connect.setText("Disconnect");
-//                port_selection.setEditable(false);
-//            }
+        System.out.print(String.format("Connect Button Pressed%n"));
+        if (btn_connect.getText().equals("Connect"))
+        {
+
+            if (port_selection.getValue() == null)
+            {
+                error("Serial Port Not Selected: Please select a port");
+            } else
+            {
+                String portName = port_selection.getValue().toString();
+
+                serialPort = SerialPort.getCommPort(portName);
+
+                //open port
+                if (serialPort.openPort())
+                {
+                    alert(String.format("Port Connected!: %s %n", portName));
+                    btn_connect.setText("Disconnect");
+                    port_selection.setEditable(false);
+                }
+            }
 
         }
+        else
+        {
+            serialPort.closePort();
+            port_selection.setEditable(true);
+            btn_connect.setText("Connect");
+        }
     }
-
 
 
     @Override
