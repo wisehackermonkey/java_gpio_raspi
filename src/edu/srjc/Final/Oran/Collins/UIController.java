@@ -27,6 +27,18 @@ import javafx.scene.layout.Region;
 import com.fazecast.jSerialComm.SerialPort;
 import edu.srjc.Final.Oran.Collins.Calculator;
 
+//TODO Board
+// https://trello.com/b/OJHyCHlC/java-final
+
+
+// Graph Arduino Sensor Data with Java and JFreeChart
+// https://www.youtube.com/watch?v=cw31L_OwX3A
+// http://www.farrellf.com/arduino/Main.java
+// http://www.farrellf.com/arduino/SensorGraph.java
+// http://farrellf.com/arduino/Updated_jSerialComm_Demo.java
+// http://www.farrellf.com/arduino/SensorGraph.java
+
+
 /**
  * wisemonkey
  */
