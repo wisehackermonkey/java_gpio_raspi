@@ -8,34 +8,16 @@ package edu.srjc.Final.Oran.Collins;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
-
 import java.util.ResourceBundle;
-import java.util.Scanner;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.layout.Region;
-
-//download link
-//http://fazecast.github.io/jSerialComm/
-//documentation
-//http://fazecast.github.io/jSerialComm/javadoc/index.html
-import com.fazecast.jSerialComm.SerialPort;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 /**
  * wisemonkey
  */
-// TODO: 12/19/17 Select serial port
-// xTODO: 12/19/17   desplay current serial ports
-// xTODO: 12/19/17   get click event from each populated
-// xTODO: 12/19/17   on click event start main loop
-// TODO: 12/19/17 get input from arduino
-// TODO: 12/19/17 rect to input from stored input
-
 // TODO: 12/11/2017 Comments
 // TODO: 12/11/2017 polish this shit
 // TODO: 12/10/2017 fix ui
@@ -63,11 +45,14 @@ public class UIController implements Initializable
 {
     private String current_input = "";
     private double result = 0;
-    private static SerialPort serialPort;
 
     enum Math_Op
     {
-        plus, minus, multiply, divide, None;
+        plus,
+        minus,
+        multiply,
+        divide,
+        None;
     }
 
     private Math_Op math_op = Math_Op.None;
@@ -75,27 +60,23 @@ public class UIController implements Initializable
     @FXML
     private TextField output;
 
-    @FXML
-    private Button btn_connect;
-
-    @FXML
-    private Button btnRefresh;
 
     @FXML
     private TextField input;
-    ObservableList<String> options = FXCollections.observableArrayList();
 
-
-    //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     @FXML
-    private ComboBox<String> port_selection = new ComboBox<>(options);
+    private void handleInput(KeyEvent e)
+    {
 
+        System.out.println("Can't you follow directions?" + e.getCharacter());
+
+    }
 
     //Helper functioncheck if string is numeric
     //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
-    private static boolean isNumeric( String str )
+    private static boolean isNumeric(String str)
     {
-        if(str.isEmpty())
+        if (str.isEmpty())
         {
             System.err.println("isNumeric(): is empty!=> " + str);
             return false;
@@ -107,134 +88,102 @@ public class UIController implements Initializable
         return str.length() == pos.getIndex();
     }
 
-    private void alert_set( String message, Alert.AlertType alert_type )
-    {
-        //http://stackoverflow.com/questions/28937392/ddg#36938061
-        Alert alert = new Alert(alert_type, message, ButtonType.OK);
-        alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
-
-        alert.setX(0);
-        alert.setY(0);
-
-        alert.show();
-    }
-
-    //HELPER FUNCTIONS
-    public void print( String input )
-    {
-        System.out.println(input);
-    }
-
-    private void alert( String message )
-    {
-        alert_set(message, Alert.AlertType.INFORMATION);
-    }
-
-    private void error( String error_message )
-    {
-        alert_set(error_message, Alert.AlertType.ERROR);
-    }
-
-    @FXML
-    private void btn_connect_press()
-    {
-        System.out.print(String.format("Connect Button Pressed%n"));
-        if(btn_connect.getText().equals("Connect"))
-        {
-
-            if(port_selection.getValue() == null)
-            {
-                error("Serial Port Not Selected: Please select a port");
-            } else
-            {
-                String portName = port_selection.getValue();
-
-                serialPort = SerialPort.getCommPort(portName);
-
-                //set port to scanner mode lets reading in characters without quitting early
-                serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
-
-                //open port
-                // TODO: 12/28/2017 error handling
-                if(serialPort.openPort())
-                {
-                    alert(String.format("Port Connected!: %s %n", portName));
-                    btn_connect.setText("Disconnect");
-//                    https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
-                    port_selection.setEditable(false);
-                }
-                Thread thread = new Thread()
-                {
-                    @Override
-                    public void run()
-                    {
-                        if(serialPort.getInputStream() == null){
-                            //error("Error occurred when tring to connect to port:" +
-                              //      "Try another port");
-                            error(String.format("Error Occurred when trying to connect to port:%n Is the Arduino Connected? %n or try connecting to a different port%n"));
-                        }
-                        else
-                        {
-                            Scanner keypressed = new Scanner(serialPort.getInputStream());
-
-                            while(keypressed.hasNext())
-                            {
-                                try
-                                {
-                                    String line = keypressed.nextLine();
-                                    if(line.matches("[ABCD0123456789#*]"))
-                                    {
-                                        System.out.println(line);
-                                    }
-                                }
-                                catch(Exception err)
-                                {
-                                    System.err.println("Exception: Reading Arduino serial port");
-                                    keypressed.close();
-                                }
-                            }
-                        }
-                    }
-                };
-                //close text input monitoring thread when closing the program
-                //https://stackoverflow.com/questions/14897194/stop-threads-before-close-my-javafx-program#20374691
-                thread.setDaemon(true);
-                //start a new thread the monitors the serial characters coming in from arduino keypad
-                thread.start();
-            }
-
-        } else
-        {
-            serialPort.closePort();
-            btn_connect.setText("Connect");
-            port_selection.setEditable(true);
-
-        }
-    }
-
-    @FXML
-    private void setBtnRefresh_handler()
-    {
-        getSerialPorts();
-    }
-    private void getSerialPorts()
-    {
-        options = FXCollections.observableArrayList();
-        SerialPort[] portNames = SerialPort.getCommPorts();
-        for(int i = 0; i < portNames.length; i++)
-        {
-            String portname = portNames[i].getSystemPortName();
-            options.add(portname);
-            port_selection.setItems(options);
-        }
-    }
 
     @Override
-    public void initialize( URL url, ResourceBundle rb )
+    public void initialize(URL url, ResourceBundle rb)
     {
-        System.out.println("Calculator Started");
 
-        getSerialPorts();
+        input.setOnKeyPressed((KeyEvent keypress) ->
+        {
+
+            String key = keypress.getText();
+
+
+            System.out.print(String.format("Key Input => '%s', keyname: %s%n", key, keypress.getCode().getName()));
+
+            System.out.print(String.format(",%n", current_input));
+            if (keypress.getCode().getName().equals("Backspace"))
+            {
+                String temp_for_print = current_input;
+                if (current_input.length() != 0)
+                {
+                    current_input = current_input.substring(0, current_input.length() - 1);
+                } else
+                {
+                    System.err.println("T-Input is empty!!");
+                }
+                System.out.print(String.format("T-backspace pressed!!, Cur: %s, New: %s, Field: %s,%n", temp_for_print, current_input, input.getText()));
+            }
+            else
+            {
+                System.err.println("F-backspace not pressed");
+            }
+
+            if (key.matches("[+\\-*/]") && isNumeric(current_input))
+            {
+                switch (key)
+                {
+                    case "+":   math_op = Math_Op.plus;     break;
+                    case "-":   math_op = Math_Op.minus;    break;
+                    case "*":   math_op = Math_Op.multiply; break;
+                    case "/":   math_op = Math_Op.divide;   break;
+                }
+                key = "";
+                try
+                {
+                    result = Long.parseLong(current_input);
+                }
+                catch (NumberFormatException e)
+                {
+                    System.err.print(String.format("ERROR DELETE PRESSED: %s%n",e.getMessage()));
+                }
+                current_input = "";
+
+            }
+
+            if (keypress.getText().equals("c"))
+            {
+                input.setText("");
+                System.out.println("T-c");
+                key = "";
+                current_input = "";
+                result = 0;
+
+                math_op = Math_Op.None;
+
+            }
+            if (keypress.getCode().getName().equals("Enter") && isNumeric(current_input))
+            {
+                System.out.println("Enter");
+                long current_number = Integer.parseInt(current_input);
+
+                switch (math_op)
+                {
+                    case plus:      result = result + current_number;   break;
+                    case minus:     result = result - current_number;   break;
+                    case multiply:  result = result * current_number;   break;
+                    case divide:    result = result / current_number;   break;
+                    default:        System.err.println("Operator Not Found!");
+                }
+                System.out.println("T- Is Enterkey input :" + result + "\n\n\n\n");
+                output.setText(String.valueOf(result));
+                current_input = "";
+                input.setText("");
+            }
+            else
+            {
+                System.err.println("F- Is Enterkey input  numeric:fail!");
+            }
+
+            if (key.matches("[0-9]") || key.matches("[+\\-*/]"))
+            {
+                System.out.println("T: matches TRUE regex not number or +,-,/,* " + current_input);
+                current_input += key;
+            } else
+            {
+                System.err.println("F: matches FAIL regex not number or +,-,/,* " + current_input);
+            }
+        });
     }
 
 }

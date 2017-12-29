@@ -36,5 +36,7 @@ void loop(){
   
   if (customKey){
     Serial.println(customKey);
+  }else{
+    Serial.print("\n");
   }
 }
