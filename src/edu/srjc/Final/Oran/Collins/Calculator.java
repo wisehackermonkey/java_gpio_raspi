@@ -6,7 +6,7 @@ import java.text.ParsePosition;
 public class Calculator
 {
 
-    private String current_input = "";
+    private String currentInput = "";
     private String mathOperator = "";
     private double result = 0;
 
@@ -19,30 +19,58 @@ public class Calculator
     {
         // TODO: 12/28/2017 ANS +,-,*,/
         // TODO: 12/28/2017 Error handel setTextinput when ''
-        if(current_input.length() != 0 && isNumeric(current_input) && keypress.equals("#"))
+        if(keypress.equals("*"))
+        {
+            int length = currentInput.length();
+
+            if(length != 0)
+            {
+                currentInput = currentInput.substring(0, length - 1);
+            }
+            else
+            {
+                System.err.print(String.format("Error Input is empty%n"));
+            }
+        }else if(currentInput.length() != 0 && isNumeric(currentInput) && keypress.equals("#"))
         {
             // TODO: 12/29/2017 try catch block
             // TODO: 12/29/2017     send user error message
-            double currentNumber = Double.parseDouble(current_input);
-            switch (mathOperator)
+            double currentNumber = 0.0;
+            try
             {
-                case "A":   result = result + currentNumber;   break;
-                case "B":   result = result - currentNumber;   break;
-                case "C":   result = result * currentNumber;   break;
-                case "D":   result = result / currentNumber;   break;
-                default:        System.err.println("Operator Not Found!");
+                currentNumber = Double.parseDouble(currentInput);
+            }catch(NumberFormatException err)
+            {
+                System.err.print(String.format("Error : input is Not numeric!%n"));
+            }
+            switch(mathOperator)
+            {
+                case "A":
+                    result = result + currentNumber;
+                    break;
+                case "B":
+                    result = result - currentNumber;
+                    break;
+                case "C":
+                    result = result * currentNumber;
+                    break;
+                case "D":
+                    result = result / currentNumber;
+                    break;
+                default:
+                    System.err.println("Operator Not Found!");
             }
 
-            current_input = "";
+            currentInput = "";
 
-        }else if(keypress.matches("[ABCD]"))
+        } else if(keypress.matches("[ABCD]"))
         {
             mathOperator = keypress;
-            result = Double.parseDouble(current_input);
-            current_input = "";
+            result = Double.parseDouble(currentInput);
+            currentInput = "";
         } else
         {
-            current_input += keypress;
+            currentInput += keypress;
         }
         // TODO: 12/28/2017 Error handling
 
@@ -51,9 +79,9 @@ public class Calculator
     }
 
 
-    public String getCurrent_input()
+    public String getCurrentInput()
     {
-        return current_input;
+        return currentInput;
     }
 
 
@@ -78,9 +106,9 @@ public class Calculator
         return str.length() == pos.getIndex();
     }
 
-    public void setCurrent_input( String current_input )
+    public void setCurrentInput( String currentInput )
     {
-        this.current_input = current_input;
+        this.currentInput = currentInput;
     }
 
     public void setMathOperator( String mathOperator )
