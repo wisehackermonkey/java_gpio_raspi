@@ -78,9 +78,11 @@ import edu.srjc.Final.Oran.Collins.Calculator;
 // TODO: 12/29/2017 install
 // TODO: 12/29/2017 setup
 // TODO: 12/29/2017 photo
+// TODO: 12/29/2017 explain what is + = A etc
 // TODO: 12/29/2017 comments
 // TODO: 12/29/2017 set comment markers
 
+// TODO: 12/29/2017 change com port message
 // xTODO: 12/28/2017 if # than get result
 // TODO: 12/29/2017         ans #
 // xTODO: 12/28/2017 if 0-9 add to number
@@ -96,7 +98,7 @@ import edu.srjc.Final.Oran.Collins.Calculator;
 // TODO: 12/29/2017     function delete
 // TODO: 12/28/2017 if '#' parse cuurent input, add to 'result' + input = 'result'
 // xTODO: 12/28/2017 UI create 'clear button'
-// TODO: 12/29/2017     ui clear handler finish
+// xTODO: 12/29/2017     ui clear handler finish
 public class UIController implements Initializable
 {
     private String current_input = "";
@@ -240,7 +242,12 @@ public class UIController implements Initializable
     @FXML
     private void clearHandler()
     {
-        System.out.print(String.format("TODO CLEAR HANDLER%n"));
+        calculator.setResult(0);
+        calculator.setMathOperator("");
+        calculator.setCurrent_input("");
+        input.setText("");
+        output.setText("0");
+        System.out.print(String.format("Res:%s, Input: <%s>%n",calculator.getResult(),calculator.getCurrent_input()));
     }
 
 

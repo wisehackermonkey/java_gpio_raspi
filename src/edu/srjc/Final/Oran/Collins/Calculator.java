@@ -21,7 +21,18 @@ public class Calculator
         // TODO: 12/28/2017 Error handel setTextinput when ''
         if(current_input.length() != 0 && isNumeric(current_input) && keypress.equals("#"))
         {
-            result += Double.parseDouble(current_input);
+            // TODO: 12/29/2017 try catch block
+            // TODO: 12/29/2017     send user error message
+            double currentNumber = Double.parseDouble(current_input);
+            switch (mathOperator)
+            {
+                case "A":   result = result + currentNumber;   break;
+                case "B":   result = result - currentNumber;   break;
+                case "C":   result = result * currentNumber;   break;
+                case "D":   result = result / currentNumber;   break;
+                default:        System.err.println("Operator Not Found!");
+            }
+
             current_input = "";
 
         }else if(keypress.matches("[ABCD]"))
@@ -36,7 +47,7 @@ public class Calculator
         // TODO: 12/28/2017 Error handling
 
 
-        System.out.print(String.format("Calculator Class: %s%n", keypress));
+        System.out.print(String.format("%s", keypress));
     }
 
 
@@ -67,4 +78,18 @@ public class Calculator
         return str.length() == pos.getIndex();
     }
 
+    public void setCurrent_input( String current_input )
+    {
+        this.current_input = current_input;
+    }
+
+    public void setMathOperator( String mathOperator )
+    {
+        this.mathOperator = mathOperator;
+    }
+
+    public void setResult( double result )
+    {
+        this.result = result;
+    }
 }

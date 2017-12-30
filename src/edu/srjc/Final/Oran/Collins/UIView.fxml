@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="Background" prefHeight="394.0" prefWidth="562.0" style="-fx-background-color: Gray;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.srjc.Final.Oran.Collins.UIController">
+<AnchorPane id="Background" prefHeight="394.0" prefWidth="737.0" style="-fx-background-color: Gray;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.srjc.Final.Oran.Collins.UIController">
     <children>
-      <TextField fx:id="output" alignment="BOTTOM_RIGHT" editable="false" focusTraversable="false" layoutX="14.0" layoutY="117.0" promptText="0">
+      <TextField fx:id="output" alignment="BOTTOM_RIGHT" editable="false" focusTraversable="false" layoutX="14.0" layoutY="117.0" prefHeight="80.0" prefWidth="637.0" promptText="0">
          <font>
             <Font size="37.0" />
          </font>
@@ -20,7 +20,7 @@
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <TextField fx:id="input" alignment="BOTTOM_RIGHT" layoutX="14.0" layoutY="211.0" promptText="0">
+      <TextField fx:id="input" alignment="BOTTOM_RIGHT" layoutX="14.0" layoutY="211.0" prefHeight="80.0" prefWidth="637.0" promptText="0">
          <font>
             <Font size="37.0" />
          </font>
@@ -42,12 +42,12 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="btnRefresh" layoutX="381.0" layoutY="65.0" mnemonicParsing="false" onAction="#setBtnRefresh_handler" prefHeight="39.0" prefWidth="92.0" text="Refresh">
+      <Button fx:id="btnRefresh" layoutX="559.0" layoutY="70.0" mnemonicParsing="false" onAction="#setBtnRefresh_handler" prefHeight="39.0" prefWidth="92.0" text="Refresh">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnClear" layoutX="482.0" layoutY="216.0" mnemonicParsing="false" onAction="#clearHandler" prefHeight="70.0" prefWidth="66.0" text="Clear">
+      <Button fx:id="btnClear" layoutX="657.0" layoutY="216.0" mnemonicParsing="false" onAction="#clearHandler" prefHeight="70.0" prefWidth="66.0" text="Clear">
          <font>
             <Font size="18.0" />
          </font>
