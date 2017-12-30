@@ -8,6 +8,7 @@
 
     by Oran C
     20171204
+    20171229
     oranbusiness@gmail.com
 */
 package edu.srjc.Final.Oran.Collins;
@@ -40,34 +41,6 @@ import javafx.scene.layout.Region;
 //HARDWARE INFO
 //https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/
 //https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
-
-
-// XTODO: 12/19/17 Select serial port
-// xTODO: 12/11/2017 Comments
-// XTODO: 12/10/2017 change output on repeate enter clear screen
-
-// XTODO: 12/29/2017 docs
-//    get help message on what to do
-//            error message if not arduino
-//            message if not working with arduino
-//            clear descripton of what the buttons do
-//
-//
-//            set by set of what to do to do to get started
-//            example how to add number
-// xTODO: 12/29/2017 install
-// xTODO: 12/29/2017 setup
-// xTODO: 12/29/2017 photo
-// xTODO: 12/29/2017 explain what is + = A etc
-// xTODO: 12/29/2017 comments
-// xTODO: 12/29/2017 set comment markers
-
-// xTODO: 12/29/2017 cleanup code
-// xTODO: 12/29/2017         ans #
-// xTODO: 12/29/2017         ans +
-// xTODO: 12/29/2017         ans -
-// xTODO: 12/29/2017         ans *
-// xTODO: 12/29/2017         ans %
 
 public class UIController implements Initializable
 {
@@ -218,11 +191,13 @@ public class UIController implements Initializable
                         thread.start();
 
                     }
-                }catch(Exception err)
+                }
+                catch(Exception err)
                 {
                     System.out.print(String.format("Something went wrong%n",err));
                 }
-            } else
+            }
+            else
             {
 
                 /*

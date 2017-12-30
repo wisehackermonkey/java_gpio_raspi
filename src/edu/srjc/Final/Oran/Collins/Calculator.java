@@ -7,6 +7,7 @@
 
     by Oran C
     20171204
+    20171229
     oranbusiness@gmail.com
 */
 package edu.srjc.Final.Oran.Collins;
@@ -91,10 +92,15 @@ public class Calculator
 
         }
         /*
-        returns result of add subract, *, /
-        and parses the current inptu
+        returns result of add subtract, *, /
+        and parses the current input
         "1234A" = 1234 with math operator = +
-        * */
+        sets the math operator
+        + = A
+        - = B
+        X = C
+        / = D
+          * */
         else if(keypress.matches("[ABCD]"))
         {
             mathOperator = keypress;
