@@ -1,102 +1,118 @@
-<!DOCTYPE html>
-<html>
-<body><h1 id="java-final-project-calculator-using-arduino-and-keypad">Java Final Project Calculator using Arduino and keypad</h1>
-<p>by Oran C
-20171204</p>
-<p>Project makes a calculator for
-a Arduino that uses a physical keypad for input</p>
-<p><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v1.jpg?raw=true" alt="Hardware"></p>
-<h2 id="install">Install</h2>
-<hr>
-<p>PHOTO VERSION OF INSTALL
-OPEN THE PHOTOS WITH the folder</p>
-<p>&#39;How TO Setup&#39;</p>
-<p>start with the hardware photos first
-hardware_vXX.jpg</p>
-<p>Then</p>
-<p>setup_vXX.png</p>
-<hr>
-<p>ARDUINO SETUP</p>
-<p>Plug in arduino to computer</p>
-<ul>
-<li><p>Upload Code to arduino 
-./upload_arduino/custom_keypad/custom_keypad.ino</p>
-</li>
-<li><p>add library to arduino ide
-./upload_arduino/Keypad.zip</p>
-</li>
-</ul>
-<p>within arduino ide
-Sketch&gt;include library&gt; Add .zip Library</p>
-<p>upload code to arduino</p>
-<p>for more help <a href="https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use?view=all">https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use?view=all</a></p>
-<hr>
-<p>COMPUTER SETUP
+# Java Final Project Calculator using Arduino and keypad
+by Oran C
+20171204
+
+Project makes a calculator for
+a Arduino that uses a physical keypad for input
+
+![Hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v1.jpg?raw=true)
+
+## Install
+
+
+---------------------------------------
+PHOTO VERSION OF INSTALL
+OPEN THE PHOTOS WITH the folder
+
+'How TO Setup'
+
+start with the hardware photos first
+hardware_vXX.jpg
+
+Then
+
+setup_vXX.png
+
+
+---------------------------------------
+
+ARDUINO SETUP
+
+Plug in arduino to computer
+- Upload Code to arduino 
+./upload_arduino/custom_keypad/custom_keypad.ino
+
+- add library to arduino ide
+./upload_arduino/Keypad.zip
+
+within arduino ide
+Sketch>include library> Add .zip Library
+
+upload code to arduino
+
+for more help https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use?view=all
+
+
+---------------------------------------
+COMPUTER SETUP
 open project within Intellij IDEA
 from main
 right click file
-&#39;RUN&#39; - from dropdown menu</p>
-<p>with calculator open
+'RUN' - from dropdown menu
+
+with calculator open
 Select port
 EX
-&#39;COM3&#39;
-click &#39;CONNECT&#39;</p>
-<p>with arduino connected to computer 
-click connect</p>
-<h1 id="hardware-setup">Hardware setup</h1>
-<ol>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v4.jpg?raw=true" alt="hardware"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v5.jpg?raw=true" alt="hardware"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v6.jpg?raw=true" alt="hardware"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v7.jpg?raw=true" alt="hardware"></li>
-</ol>
-<h2 id="software-setup">Software Setup</h2>
-<hr>
-<ol>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v1.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v2.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v3.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v4.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v5.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v6.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v7.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v8.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v9.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v10.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v11.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v12.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v13.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v14.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v15.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v16.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v17.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v18.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v19.PNG?raw=true" alt="SETUP"></li>
-<li><img src="https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v20.jpg?raw=true" alt="SETUP"></li>
-</ol>
-<h2 id="resources">resources</h2>
-<h3 id="links">LINKS</h3>
-<h4 id="graph-arduino-sensor-data-with-java-and-jfreechart">Graph Arduino Sensor Data with Java and JFreeChart</h4>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=cw31L_OwX3A">https://www.youtube.com/watch?v=cw31L_OwX3A</a></li>
-<li><a href="http://www.farrellf.com/arduino/Main.java">http://www.farrellf.com/arduino/Main.java</a> </li>
-<li><a href="http://www.farrellf.com/arduino/SensorGraph.java">http://www.farrellf.com/arduino/SensorGraph.java</a></li>
-<li><a href="http://farrellf.com/arduino/Updated_jSerialComm_Demo.java">http://farrellf.com/arduino/Updated_jSerialComm_Demo.java</a></li>
-<li><a href="http://www.farrellf.com/arduino/SensorGraph.java">http://www.farrellf.com/arduino/SensorGraph.java</a></li>
-</ul>
-<h3 id="hardware-info">HARDWARE INFO</h3>
-<h4 id="interface-4x4-matrix-keypad-with-microcontroller">Interface 4x4 Matrix Keypad With Microcontroller</h4>
-<ul>
-<li><a href="https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/">https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/</a><h3 id="jserialcomm-docs">jSerialComm Docs</h3>
-</li>
-<li><a href="https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example">https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example</a></li>
-</ul>
-<h2 id="error-help">Error help</h2>
-<h4 id="todo">todo</h4>
-<p>Error message if not arduino</p>
-<p>message if not working with arduino</p>
-<p>set by set of what to do to do to get started</p>
-<p>example how to add number</p>
+'COM3'
+click 'CONNECT'
 
-</body>
-</html>
+with arduino connected to computer 
+click connect
+
+# Hardware setup
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v4.jpg?raw=true)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v5.jpg?raw=true)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v6.jpg?raw=true)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v7.jpg?raw=true)
+
+## Software Setup
+-------
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v1.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v2.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v3.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v4.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v5.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v6.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v7.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v8.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v9.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v10.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v11.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v12.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v13.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v14.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v15.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v16.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v17.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v18.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v19.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v20.PNG?raw=true)
+
+
+
+
+## resources
+### LINKS
+#### Graph Arduino Sensor Data with Java and JFreeChart
+- https://www.youtube.com/watch?v=cw31L_OwX3A
+- http://www.farrellf.com/arduino/Main.java 
+- http://www.farrellf.com/arduino/SensorGraph.java
+- http://farrellf.com/arduino/Updated_jSerialComm_Demo.java
+- http://www.farrellf.com/arduino/SensorGraph.java
+
+### HARDWARE INFO
+#### Interface 4x4 Matrix Keypad With Microcontroller
+- https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/
+### jSerialComm Docs
+- https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
+
+## Error help
+
+#### todo
+Error message if not arduino
+
+message if not working with arduino
+
+set by set of what to do to do to get started
+
+example how to add number
