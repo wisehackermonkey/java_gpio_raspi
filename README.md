@@ -8,8 +8,6 @@ a Arduino that uses a physical keypad for input
 ![Hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v1.jpg?raw=true)
 
 ## Install
-`
-
 ---------------------------------------
 PHOTO VERSION OF INSTALL
 OPEN THE PHOTOS WITH the folder
@@ -60,10 +58,10 @@ with arduino connected to computer
 click connect
 
 # Hardware setup
-1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v4.jpg)
-1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v5.jpg)
-1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v6.jpg)
-1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v7.jpg)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v4.jpg?raw=true)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v5.jpg?raw=true)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v6.jpg?raw=true)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v7.jpg?raw=true)
 
 ## Software Setup
 -------
@@ -87,9 +85,6 @@ click connect
 1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v18.PNG?raw=true)
 1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v19.PNG?raw=true)
 1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v20.jpg?raw=true)
-
-`
-
 
 ## resources
 //LINKS
