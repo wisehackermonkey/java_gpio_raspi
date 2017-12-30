@@ -74,16 +74,29 @@ import edu.srjc.Final.Oran.Collins.Calculator;
 // xTODO: 12/11/2017 add raspberry pi
 
 
+// TODO: 12/29/2017 docs
+// TODO: 12/29/2017 install
+// TODO: 12/29/2017 setup
+// TODO: 12/29/2017 photo
+// TODO: 12/29/2017 comments
+// TODO: 12/29/2017 set comment markers
 
-// TODO: 12/28/2017 if # than get result
-// TODO: 12/28/2017 if 0-9 add to number
-// TODO: 12/28/2017 if 'A' parse current input, then set math op to 'PLUS'
+// xTODO: 12/28/2017 if # than get result
+// TODO: 12/29/2017         ans #
+// xTODO: 12/28/2017 if 0-9 add to number
+// xTODO: 12/28/2017 if 'A' parse current input, then set math op to 'PLUS'
+// TODO: 12/29/2017         ans +
 // TODO: 12/28/2017 if 'B' parse, math = 'Sub'
+// TODO: 12/29/2017         ans -
 // TODO: 12/28/2017 if 'C' parse, math = 'times'
+// TODO: 12/29/2017         ans *
 // TODO: 12/28/2017 if 'D' parse, math = 'divide'
+// TODO: 12/29/2017         ans %
 // TODO: 12/28/2017 if '*' delete last character,
+// TODO: 12/29/2017     function delete
 // TODO: 12/28/2017 if '#' parse cuurent input, add to 'result' + input = 'result'
-// TODO: 12/28/2017 UI create 'clear button'
+// xTODO: 12/28/2017 UI create 'clear button'
+// TODO: 12/29/2017     ui clear handler finish
 public class UIController implements Initializable
 {
     private String current_input = "";
@@ -109,6 +122,9 @@ public class UIController implements Initializable
     private Button btnRefresh;
 
     @FXML
+    private Button btnClear;
+
+    @FXML
     private TextField input;
 
     @FXML
@@ -118,37 +134,6 @@ public class UIController implements Initializable
     //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
     @FXML
     private ComboBox<String> port_selection = new ComboBox<>(options);
-
-
-
-
-    private void alert_set( String message, Alert.AlertType alert_type )
-    {
-        //http://stackoverflow.com/questions/28937392/ddg#36938061
-        Alert alert = new Alert(alert_type, message, ButtonType.OK);
-        alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
-
-        alert.setX(0);
-        alert.setY(0);
-
-        alert.show();
-    }
-
-    //HELPER FUNCTIONS
-    public void print( String input )
-    {
-        System.out.println(input);
-    }
-
-    private void alert( String message )
-    {
-        alert_set(message, Alert.AlertType.INFORMATION);
-    }
-
-    private void error( String error_message )
-    {
-        alert_set(error_message, Alert.AlertType.ERROR);
-    }
 
     @FXML
     private void btn_connect_press()
@@ -248,6 +233,46 @@ public class UIController implements Initializable
             options.add(portname);
             port_selection.setItems(options);
         }
+    }
+
+
+
+    @FXML
+    private void clearHandler()
+    {
+        System.out.print(String.format("TODO CLEAR HANDLER%n"));
+    }
+
+
+
+
+
+    //HELPER FUNCTIONS
+    private void alert_set( String message, Alert.AlertType alert_type )
+    {
+        //http://stackoverflow.com/questions/28937392/ddg#36938061
+        Alert alert = new Alert(alert_type, message, ButtonType.OK);
+        alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
+
+        alert.setX(0);
+        alert.setY(0);
+
+        alert.show();
+    }
+
+    public void print( String input )
+    {
+        System.out.println(input);
+    }
+
+    private void alert( String message )
+    {
+        alert_set(message, Alert.AlertType.INFORMATION);
+    }
+
+    private void error( String error_message )
+    {
+        alert_set(error_message, Alert.AlertType.ERROR);
     }
 
     @Override
