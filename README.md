@@ -86,7 +86,7 @@ click connect
 1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v17.PNG?raw=true)
 1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v18.PNG?raw=true)
 1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v19.PNG?raw=true)
-1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v20.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v20.jpg?raw=true)
 
 `
 
