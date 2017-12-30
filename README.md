@@ -5,6 +5,7 @@ by Oran C
 Project makes a calculator for
 a Arduino that uses a physical keypad for input
 
+![Hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v1.jpg?raw=true)
 
 ## Install
 `
@@ -58,7 +59,38 @@ click 'CONNECT'
 with arduino connected to computer 
 click connect
 
+# Hardware setup
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v4.jpg)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v5.jpg)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v6.jpg)
+1. ![hardware](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/hardware_v7.jpg)
+
+## Software Setup
+-------
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v1.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v2.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v3.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v4.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v5.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v6.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v7.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v8.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v9.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v10.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v11.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v12.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v13.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v14.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v15.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v16.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v17.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v18.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v19.PNG?raw=true)
+1. ![SETUP](https://github.com/wisehackermonkey/java_gpio_raspi/blob/master/HOW%20TO%20SETUP/setup_v20.PNG?raw=true)
+
 `
+
+
 ## resources
 //LINKS
 // Graph Arduino Sensor Data with Java and JFreeChart
