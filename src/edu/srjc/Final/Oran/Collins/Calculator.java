@@ -1,6 +1,6 @@
 // TODO: 12/29/2017 Header comment
 /*
- Java Final Project Calculator using raspberry pi
+ Java Final Project Calculator
     by Oran C
     20171204
     oranbusiness@gmail.com

@@ -1,6 +1,6 @@
 /*
     Java Final Project Calculator
-    This project uses the Arduino with a Membrain keypad
+    This project uses the Arduino with a Membrane keypad
     by Oran C
     20171204
     oranbusiness@gmail.com

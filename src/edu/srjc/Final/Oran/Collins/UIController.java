@@ -1,6 +1,6 @@
 // TODO: 12/29/2017 header comment
 /*
- Java Final Project Calculator using raspberry pi
+ Java Final Project Calculator
     by Oran C
     20171204
     oranbusiness@gmail.com
@@ -52,8 +52,8 @@ import javafx.scene.layout.Region;
 //            example how to add number
 // TODO: 12/29/2017 install
 // TODO: 12/29/2017 setup
-// TODO: 12/29/2017 photo
-// TODO: 12/29/2017 explain what is + = A etc
+// xTODO: 12/29/2017 photo
+// xTODO: 12/29/2017 explain what is + = A etc
 // TODO: 12/29/2017 comments
 // TODO: 12/29/2017 set comment markers
 
