@@ -1,189 +1,293 @@
+// TODO: 12/29/2017 header comment
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ Java Final Project Calculator
+    by Oran C
+    20171204
+    oranbusiness@gmail.com
+*/
 package edu.srjc.Final.Oran.Collins;
 
+
+//download link
+//http://fazecast.github.io/jSerialComm/
+//documentation
+//http://fazecast.github.io/jSerialComm/javadoc/index.html
+import com.fazecast.jSerialComm.SerialPort;
 import java.net.URL;
-import java.text.NumberFormat;
-import java.text.ParsePosition;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 
-/**
- * wisemonkey
- */
+//LINKS
+// Graph Arduino Sensor Data with Java and JFreeChart
+// https://www.youtube.com/watch?v=cw31L_OwX3A
+// http://www.farrellf.com/arduino/Main.java
+// http://www.farrellf.com/arduino/SensorGraph.java
+// http://farrellf.com/arduino/Updated_jSerialComm_Demo.java
+// http://www.farrellf.com/arduino/SensorGraph.java
+
+//HARDWARE INFO
+//https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/
+//https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
+
+
+// TODO: 12/19/17 Select serial port
 // TODO: 12/11/2017 Comments
-// TODO: 12/11/2017 polish this shit
-// TODO: 12/10/2017 fix ui
-// TODO: 12/15/2017   make pretty change colors
-// TODO: 12/10/2017   prompt more descriptive
-// TODO: 12/11/2017   change location of history of op's '5+6' 
-// xTODO: 12/10/2017  output textbox
-// xTODO: 12/10/2017  text box select
-// xTODO: 12/10/2017 fix crash upon '++' instead of +
-// xTODO: 12/10/2017  crash "+" + <enter>
-// TODO: 12/10/2017 Add Delete
-// TODO: 12/11/2017     fix crash when no input
-// xTODO: 12/10/2017 Generalize operators
-// xTODO: 12/10/2017 Add *
-// xTODO: 12/10/2017 Add /
-// xTODO: 12/11/2017    fix rounding issues int result => float result
-// xTODO: 12/10/2017 Add -
 // TODO: 12/10/2017 change output on repeate enter clear screen
-// xTODO: 12/10/2017 Clear output upon pressing 'c' - clear
-// TODO: 12/11/2017     fix clear showing the c character
-// TODO: 12/10/2017  fix input leaving the 'c' character in the input!
-// TODO: 12/11/2017 add ANS +,-,*,/
-// TODO: 12/11/2017 add raspberry pi
+
+// TODO: 12/29/2017 docs
+//    get help message on what to do
+//            error message if not arduino
+//            message if not working with arduino
+//            clear descripton of what the buttons do
+//
+//
+//            set by set of what to do to do to get started
+//            example how to add number
+// TODO: 12/29/2017 install
+// TODO: 12/29/2017 setup
+// xTODO: 12/29/2017 photo
+// xTODO: 12/29/2017 explain what is + = A etc
+// TODO: 12/29/2017 comments
+// TODO: 12/29/2017 set comment markers
+
+// TODO: 12/29/2017 cleanup code
+// TODO: 12/29/2017         ans #
+// TODO: 12/29/2017         ans +
+// TODO: 12/29/2017         ans -
+// TODO: 12/29/2017         ans *
+// TODO: 12/29/2017         ans %
+
 public class UIController implements Initializable
 {
     private String current_input = "";
     private double result = 0;
-
-    enum Math_Op
-    {
-        plus,
-        minus,
-        multiply,
-        divide,
-        None;
-    }
-
-    private Math_Op math_op = Math_Op.None;
+    private static SerialPort serialPort;
+    ObservableList<String> options = FXCollections.observableArrayList();
+    private static Calculator calculator = new Calculator();
 
     @FXML
     private TextField output;
 
+    @FXML
+    private Button btn_connect;
+
+    @FXML
+    private Button btnRefresh;
+
+    @FXML
+    private Button btnClear;
 
     @FXML
     private TextField input;
 
     @FXML
-    private void handleInput(KeyEvent e)
+    private Label message;
+
+
+    //https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
+    @FXML
+    private ComboBox<String> port_selection = new ComboBox<>(options);
+
+
+    @FXML
+    private void btn_connect_press()
     {
-
-        System.out.println("Can't you follow directions?" + e.getCharacter());
-
-    }
-
-    //Helper functioncheck if string is numeric
-    //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
-    private static boolean isNumeric(String str)
-    {
-        if (str.isEmpty())
-        {
-            System.err.println("isNumeric(): is empty!=> " + str);
-            return false;
-        }
-
-        NumberFormat formatter = NumberFormat.getInstance();
-        ParsePosition pos = new ParsePosition(0);
-        formatter.parse(str, pos);
-        return str.length() == pos.getIndex();
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb)
-    {
-
-        input.setOnKeyPressed((KeyEvent keypress) ->
-        {
-
-            String key = keypress.getText();
-
-
-            System.out.print(String.format("Key Input => '%s', keyname: %s%n", key, keypress.getCode().getName()));
-
-            System.out.print(String.format(",%n", current_input));
-            if (keypress.getCode().getName().equals("Backspace"))
+            // TODO: 12/29/2017 remove
+            if(btn_connect.getText().equals("Connect"))
             {
-                String temp_for_print = current_input;
-                if (current_input.length() != 0)
-                {
-                    current_input = current_input.substring(0, current_input.length() - 1);
-                } else
-                {
-                    System.err.println("T-Input is empty!!");
-                }
-                System.out.print(String.format("T-backspace pressed!!, Cur: %s, New: %s, Field: %s,%n", temp_for_print, current_input, input.getText()));
-            }
-            else
-            {
-                System.err.println("F-backspace not pressed");
-            }
-
-            if (key.matches("[+\\-*/]") && isNumeric(current_input))
-            {
-                switch (key)
-                {
-                    case "+":   math_op = Math_Op.plus;     break;
-                    case "-":   math_op = Math_Op.minus;    break;
-                    case "*":   math_op = Math_Op.multiply; break;
-                    case "/":   math_op = Math_Op.divide;   break;
-                }
-                key = "";
                 try
                 {
-                    result = Long.parseLong(current_input);
-                }
-                catch (NumberFormatException e)
+                    if(port_selection.getValue() == null)
+                    {
+                        error("SELECT PORT: EXAMPLE      port > \"COM3\" or '/dev/ttyACM0'");
+                    } else
+                    {
+
+                        String portName = port_selection.getValue();
+
+                        serialPort = SerialPort.getCommPort(portName);
+
+                        //set port to scanner mode lets reading in characters without quitting early
+                        serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 1000, 1000);
+
+                        //open port
+                        // TODO: 12/28/2017 error handling
+                        if(serialPort.openPort())
+                        {
+                            message.setText(String.format("Port: %s %n", portName));
+                            alert(String.format("NOTE: If buttons NOT working, TRY other PORT, than port: %s %n", portName));
+                            alert(String.format("Port Connected!: %s %n", portName));
+                            btn_connect.setText("Disconnect");
+
+                            //https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
+                            port_selection.setEditable(false);
+                        }
+
+                        // TODO: 12/29/2017 comment
+                        Thread thread = new Thread()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                if(serialPort.getInputStream() == null)
+                                {
+                                    //error("Error occurred when tring to connect to port:" +
+                                    //      "Try another port");
+                                    error(String.format("Error Occurred when trying to connect to port:%n Is the Arduino Connected? %n or try connecting to a different port%n"));
+                                } else
+                                {
+                                    try
+                                    {
+                                        Scanner keypressed = null;
+                                        if(serialPort.isOpen())
+                                        {
+                                            keypressed = new Scanner(serialPort.getInputStream());
+                                        }
+
+                                        while(keypressed.hasNext())
+                                        {
+                                            try
+                                            {
+                                                String line = keypressed.nextLine();
+                                                if(line.matches("[ABCD0123456789#*]"))
+                                                {
+
+                                                    calculator.setTextInput(line);
+
+
+                                                    input.setText(calculator.getCurrentInput());
+                                                    output.setText(calculator.getResult());
+                                                }
+                                            }
+                                            catch(Exception err)
+                                            {
+                                                System.err.println("Exception: Reading Arduino serial port");
+                                                error("Exception: Reading Arduino serial port");
+                                                keypressed.close();
+                                            }
+                                        }
+                                    }
+                                    catch(IllegalStateException e)
+                                    {
+                                        System.err.println("ERROR: Try DISCONNECT  then CONNECT ");
+                                        serialPort.closePort();
+                                    }
+                                }
+                            }
+                        };
+
+
+                        //close text input monitoring thread when closing the program
+                        //https://stackoverflow.com/questions/14897194/stop-threads-before-close-my-javafx-program#20374691
+                        thread.setDaemon(true);
+
+                        //start a new thread the monitors the serial characters coming in from arduino keypad
+                        thread.start();
+
+                    }
+                }catch(Exception err)
                 {
-                    System.err.print(String.format("ERROR DELETE PRESSED: %s%n",e.getMessage()));
+                    System.out.print(String.format("Something went wrong%n",err));
                 }
-                current_input = "";
-
-            }
-
-            if (keypress.getText().equals("c"))
-            {
-                input.setText("");
-                System.out.println("T-c");
-                key = "";
-                current_input = "";
-                result = 0;
-
-                math_op = Math_Op.None;
-
-            }
-            if (keypress.getCode().getName().equals("Enter") && isNumeric(current_input))
-            {
-                System.out.println("Enter");
-                long current_number = Integer.parseInt(current_input);
-
-                switch (math_op)
-                {
-                    case plus:      result = result + current_number;   break;
-                    case minus:     result = result - current_number;   break;
-                    case multiply:  result = result * current_number;   break;
-                    case divide:    result = result / current_number;   break;
-                    default:        System.err.println("Operator Not Found!");
-                }
-                System.out.println("T- Is Enterkey input :" + result + "\n\n\n\n");
-                output.setText(String.valueOf(result));
-                current_input = "";
-                input.setText("");
-            }
-            else
-            {
-                System.err.println("F- Is Enterkey input  numeric:fail!");
-            }
-
-            if (key.matches("[0-9]") || key.matches("[+\\-*/]"))
-            {
-                System.out.println("T: matches TRUE regex not number or +,-,/,* " + current_input);
-                current_input += key;
             } else
             {
-                System.err.println("F: matches FAIL regex not number or +,-,/,* " + current_input);
+                // TODO: 12/29/2017 comment
+                serialPort.closePort();
+                btn_connect.setText("Connect");
+                port_selection.setEditable(true);
+
+                //clear calculator when disconnecting
+                output.setText("0.0");
+                input.setText("");
+                calculator.setMathOperator("");
+                calculator.setResult(0.0);
+                calculator.setCurrentInput("");
+
             }
-        });
+
+
+    }
+
+    @FXML
+    private void setBtnRefresh_handler()
+    {
+        getSerialPorts();
+    }
+
+    // TODO: 12/29/2017 comment
+    private void getSerialPorts()
+    {
+
+        SerialPort[] portNames = SerialPort.getCommPorts();
+
+        options = FXCollections.observableArrayList();
+
+        for(int i = 0; i < portNames.length; i++)
+        {
+            String portname = portNames[i].getSystemPortName();
+            options.add(portname);
+            port_selection.setItems(options);
+        }
+    }
+
+
+    @FXML
+    private void clearHandler()
+    {
+        calculator.setResult(0);
+        calculator.setMathOperator("");
+        calculator.setCurrentInput("");
+        input.setText("");
+        output.setText("0");
+        System.out.print(String.format("Res:%s, Input: <%s>%n", calculator.getResult(), calculator.getCurrentInput()));
+    }
+
+
+    // TODO: 12/29/2017 comment
+    //HELPER FUNCTIONS
+    private void alert_set( String message, Alert.AlertType alert_type )
+    {
+        try
+        {
+            //http://stackoverflow.com/questions/28937392/ddg#36938061
+            Alert alert = new Alert(alert_type, message, ButtonType.OK);
+            alert.getDialogPane().setMinHeight(Region.USE_COMPUTED_SIZE);
+
+            alert.setX(0);
+            alert.setY(0);
+
+            alert.show();
+        }catch(Exception err)
+        {
+            System.err.println("ERROR: Alert Message Failed!");
+        }
+
+    }
+
+    // TODO: 12/29/2017 comment
+    private void alert( String message )
+    {
+        alert_set(message, Alert.AlertType.INFORMATION);
+    }
+    // TODO: 12/29/2017 comment
+    private void error( String error_message )
+    {
+        alert_set(error_message, Alert.AlertType.ERROR);
+    }
+    // TODO: 12/29/2017 comment
+    @Override
+    public void initialize( URL url, ResourceBundle rb )
+    {
+        System.out.println("Calculator Started");
+
+        getSerialPorts();
     }
 
 }
