@@ -127,7 +127,8 @@ public class UIController implements Initializable
                             alert(String.format("NOTE: If buttons NOT working, TRY other PORT, than port: %s %n", portName));
                             alert(String.format("Port Connected!: %s %n", portName));
                             btn_connect.setText("Disconnect");
-    //                    https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
+
+                            //https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
                             port_selection.setEditable(false);
                         }
 

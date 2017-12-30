@@ -1,9 +1,9 @@
-# Java Final Project Calculator using raspberry pi
+# Java Final Project Calculator using Arduino and keypad
 by Oran C
 20171204
 
 Project makes a calculator for
-the raspberry pi that uses a physical keypad for imput
+a Arduino that uses a physical keypad for input
 
 
 ## Install
