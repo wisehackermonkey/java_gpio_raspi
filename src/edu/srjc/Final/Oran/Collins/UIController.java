@@ -99,9 +99,7 @@ public class UIController implements Initializable
     @FXML
     private void btn_connect_press()
     {
-        // TODO: 12/29/2017 remove
-           // System.out.print(String.format("ConnectBTN:>%s<%n", btn_connect.getText()));
-
+            // TODO: 12/29/2017 remove
             if(btn_connect.getText().equals("Connect"))
             {
                 try
