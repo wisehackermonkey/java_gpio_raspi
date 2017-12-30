@@ -1,3 +1,10 @@
+// TODO: 12/29/2017 Header comment
+/*
+ Java Final Project Calculator using raspberry pi
+    by Oran C
+    20171204
+    oranbusiness@gmail.com
+*/
 package edu.srjc.Final.Oran.Collins;
 
 import java.text.NumberFormat;
@@ -8,17 +15,11 @@ public class Calculator
 
     private String currentInput = "";
     private String mathOperator = "";
-    private double result = 0;
+    private double result = 0.0;
 
-    public Calculator()
-    {
-        System.out.print(String.format("Calculator Constructor Called: %n"));
-    }
-
+    // TODO: 12/29/2017 comment
     public void setTextInput( String keypress )
     {
-        // TODO: 12/28/2017 ANS +,-,*,/
-        // TODO: 12/28/2017 Error handel setTextinput when ''
         if(keypress.equals("*"))
         {
             int length = currentInput.length();
@@ -31,7 +32,8 @@ public class Calculator
             {
                 System.err.print(String.format("Error Input is empty%n"));
             }
-        }else if(currentInput.length() != 0 && isNumeric(currentInput) && keypress.equals("#"))
+        }
+        else if(currentInput.length() != 0 && isNumeric(currentInput) && keypress.equals("#"))
         {
             // TODO: 12/29/2017 try catch block
             // TODO: 12/29/2017     send user error message
@@ -39,7 +41,8 @@ public class Calculator
             try
             {
                 currentNumber = Double.parseDouble(currentInput);
-            }catch(NumberFormatException err)
+            }
+            catch(NumberFormatException err)
             {
                 System.err.print(String.format("Error : input is Not numeric!%n"));
             }
@@ -63,34 +66,23 @@ public class Calculator
 
             currentInput = "";
 
-        } else if(keypress.matches("[ABCD]"))
+        }
+        else if(keypress.matches("[ABCD]"))
         {
             mathOperator = keypress;
             result = Double.parseDouble(currentInput);
             currentInput = "";
-        } else
+        }
+        else
         {
             currentInput += keypress;
         }
-        // TODO: 12/28/2017 Error handling
-
-
         System.out.print(String.format("%s", keypress));
     }
 
 
-    public String getCurrentInput()
-    {
-        return currentInput;
-    }
 
-
-    public String getResult()
-    {
-        return Double.toString(result);
-    }
-
-    //Helper functioncheck if string is numeric
+    //Helper function to check if string is numeric
     //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
     private static boolean isNumeric( String str )
     {
@@ -106,16 +98,23 @@ public class Calculator
         return str.length() == pos.getIndex();
     }
 
+    //Getters and setters
+    public String getCurrentInput()
+    {
+        return currentInput;
+    }
+    public String getResult()
+    {
+        return Double.toString(result);
+    }
     public void setCurrentInput( String currentInput )
     {
         this.currentInput = currentInput;
     }
-
     public void setMathOperator( String mathOperator )
     {
         this.mathOperator = mathOperator;
     }
-
     public void setResult( double result )
     {
         this.result = result;

@@ -1,16 +1,21 @@
+// TODO: 12/29/2017 header comment
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ Java Final Project Calculator using raspberry pi
+    by Oran C
+    20171204
+    oranbusiness@gmail.com
+*/
 package edu.srjc.Final.Oran.Collins;
 
-import java.net.URL;
 
+//download link
+//http://fazecast.github.io/jSerialComm/
+//documentation
+//http://fazecast.github.io/jSerialComm/javadoc/index.html
+import com.fazecast.jSerialComm.SerialPort;
+import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -19,16 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 
-//download link
-//http://fazecast.github.io/jSerialComm/
-//documentation
-//http://fazecast.github.io/jSerialComm/javadoc/index.html
-import com.fazecast.jSerialComm.SerialPort;
-
-//TODO Board
-// https://trello.com/b/OJHyCHlC/java-final
-
-
+//LINKS
 // Graph Arduino Sensor Data with Java and JFreeChart
 // https://www.youtube.com/watch?v=cw31L_OwX3A
 // http://www.farrellf.com/arduino/Main.java
@@ -36,41 +32,14 @@ import com.fazecast.jSerialComm.SerialPort;
 // http://farrellf.com/arduino/Updated_jSerialComm_Demo.java
 // http://www.farrellf.com/arduino/SensorGraph.java
 
+//HARDWARE INFO
+//https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/
+//https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
 
-/**
- * wisemonkey
- */
+
 // TODO: 12/19/17 Select serial port
-// xTODO: 12/19/17   desplay current serial ports
-// xTODO: 12/19/17   get click event from each populated
-// xTODO: 12/19/17   on click event start main loop
-// xTODO: 12/19/17 get input from arduino
-// xTODO: 12/19/17 rect to input from stored input
-
 // TODO: 12/11/2017 Comments
-// xTODO: 12/11/2017 polish this shit
-// xTODO: 12/10/2017 fix ui
-// xTODO: 12/15/2017   make pretty change colors
-// xTODO: 12/10/2017   prompt more descriptive
-// xTODO: 12/11/2017   change location of history of op's '5+6'
-// xTODO: 12/10/2017  output textbox
-// xTODO: 12/10/2017  text box select
-// xTODO: 12/10/2017 fix crash upon '++' instead of +
-// xTODO: 12/10/2017  crash "+" + <enter>
-// xTODO: 12/10/2017 Add Delete
-// xTODO: 12/11/2017     fix crash when no input
-// xTODO: 12/10/2017 Generalize operators
-// xTODO: 12/10/2017 Add *
-// xTODO: 12/10/2017 Add /
-// xTODO: 12/11/2017    fix rounding issues int result => float result
-// xTODO: 12/10/2017 Add -
 // TODO: 12/10/2017 change output on repeate enter clear screen
-// xTODO: 12/10/2017 Clear output upon pressing 'c' - clear
-// xTODO: 12/11/2017     fix clear showing the c character
-// xTODO: 12/10/2017  fix input leaving the 'c' character in the input!
-// xTODO: 12/11/2017 add ANS +,-,*,/
-// xTODO: 12/11/2017 add raspberry pi
-
 
 // TODO: 12/29/2017 docs
 //    get help message on what to do
@@ -89,23 +58,12 @@ import com.fazecast.jSerialComm.SerialPort;
 // TODO: 12/29/2017 set comment markers
 
 // TODO: 12/29/2017 cleanup code
-// xTODO: 12/29/2017 change com port message
-// xTODO: 12/28/2017 if # than get result
 // TODO: 12/29/2017         ans #
-// xTODO: 12/28/2017 if 0-9 add to number
-// xTODO: 12/28/2017 if 'A' parse current input, then set math op to 'PLUS'
 // TODO: 12/29/2017         ans +
-// xTODO: 12/28/2017 if 'B' parse, math = 'Sub'
 // TODO: 12/29/2017         ans -
-// xTODO: 12/28/2017 if 'C' parse, math = 'times'
 // TODO: 12/29/2017         ans *
-// x: 12/28/2017 if 'D' parse, math = 'divide'
 // TODO: 12/29/2017         ans %
-//xTODO: 12/28/2017 if '*' delete last character,
-// TODO: 12/29/2017     function delete
-// xTODO: 12/28/2017 if '#' parse cuurent input, add to 'result' + input = 'result'
-// xTODO: 12/28/2017 UI create 'clear button'
-// xTODO: 12/29/2017     ui clear handler finish
+
 public class UIController implements Initializable
 {
     private String current_input = "";
@@ -113,13 +71,6 @@ public class UIController implements Initializable
     private static SerialPort serialPort;
     ObservableList<String> options = FXCollections.observableArrayList();
     private static Calculator calculator = new Calculator();
-
-    enum Math_Op
-    {
-        plus, minus, multiply, divide, None;
-    }
-
-    private Math_Op math_op = Math_Op.None;
 
     @FXML
     private TextField output;
@@ -148,10 +99,9 @@ public class UIController implements Initializable
     @FXML
     private void btn_connect_press()
     {
+        // TODO: 12/29/2017 remove
+           // System.out.print(String.format("ConnectBTN:>%s<%n", btn_connect.getText()));
 
-            System.out.print(String.format("Connect Button Pressed%n"));
-
-            System.out.print(String.format("ConnectBTN:>%s<%n", btn_connect.getText()));
             if(btn_connect.getText().equals("Connect"))
             {
                 try
@@ -180,6 +130,8 @@ public class UIController implements Initializable
     //                    https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
                             port_selection.setEditable(false);
                         }
+
+                        // TODO: 12/29/2017 comment
                         Thread thread = new Thread()
                         {
                             @Override
@@ -213,8 +165,6 @@ public class UIController implements Initializable
 
                                                     input.setText(calculator.getCurrentInput());
                                                     output.setText(calculator.getResult());
-    // TODO: 12/29/2017 remove print
-                                                    System.out.print(String.format("In: %s, Text: %s, Result: %s%n", line, calculator.getCurrentInput(), calculator.getResult()));
                                                 }
                                             }
                                             catch(Exception err)
@@ -227,17 +177,18 @@ public class UIController implements Initializable
                                     }
                                     catch(IllegalStateException e)
                                     {
-                                       // error("ERROR: IllegalStateException");
                                         System.err.println("ERROR: Try DISCONNECT  then CONNECT ");
                                         serialPort.closePort();
                                     }
                                 }
                             }
                         };
+
+
                         //close text input monitoring thread when closing the program
                         //https://stackoverflow.com/questions/14897194/stop-threads-before-close-my-javafx-program#20374691
-
                         thread.setDaemon(true);
+
                         //start a new thread the monitors the serial characters coming in from arduino keypad
                         thread.start();
 
@@ -256,6 +207,9 @@ public class UIController implements Initializable
                 //clear calculator when disconnecting
                 output.setText("0.0");
                 input.setText("");
+                calculator.setMathOperator("");
+                calculator.setResult(0.0);
+                calculator.setCurrentInput("");
 
             }
 
@@ -268,11 +222,14 @@ public class UIController implements Initializable
         getSerialPorts();
     }
 
+    // TODO: 12/29/2017 comment
     private void getSerialPorts()
     {
 
-        options = FXCollections.observableArrayList();
         SerialPort[] portNames = SerialPort.getCommPorts();
+
+        options = FXCollections.observableArrayList();
+
         for(int i = 0; i < portNames.length; i++)
         {
             String portname = portNames[i].getSystemPortName();
@@ -294,11 +251,10 @@ public class UIController implements Initializable
     }
 
 
+    // TODO: 12/29/2017 comment
     //HELPER FUNCTIONS
     private void alert_set( String message, Alert.AlertType alert_type )
     {
-
-
         try
         {
             //http://stackoverflow.com/questions/28937392/ddg#36938061
@@ -316,22 +272,17 @@ public class UIController implements Initializable
 
     }
 
-    public void print( String input )
-    {
-        System.out.println(input);
-    }
-
+    // TODO: 12/29/2017 comment
     private void alert( String message )
     {
-
         alert_set(message, Alert.AlertType.INFORMATION);
     }
-
+    // TODO: 12/29/2017 comment
     private void error( String error_message )
     {
         alert_set(error_message, Alert.AlertType.ERROR);
     }
-
+    // TODO: 12/29/2017 comment
     @Override
     public void initialize( URL url, ResourceBundle rb )
     {

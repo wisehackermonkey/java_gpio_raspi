@@ -1,13 +1,13 @@
 /*
- Java Final Project Calculator using raspberry pi
+    Java Final Project Calculator
+    This project uses the Arduino with a Membrain keypad
     by Oran C
     20171204
     oranbusiness@gmail.com
 */
 
 package edu.srjc.Final.Oran.Collins;
-//https://embedjournal.com/interface-4x4-matrix-keypad-with-microcontroller/
-//https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
