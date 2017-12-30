@@ -1,6 +1,11 @@
-// TODO: 12/29/2017 header comment
 /*
  Java Final Project Calculator
+ This class creates the java fx interface
+ creates the interface for the calculator
+ also handles connecting to the Arduino
+ and calling the calculator class that
+ handles all the annoying math calculations
+
     by Oran C
     20171204
     oranbusiness@gmail.com
@@ -37,11 +42,11 @@ import javafx.scene.layout.Region;
 //https://github.com/Fazecast/jSerialComm/wiki/Java-InputStream-and-OutputStream-Interfacing-Usage-Example
 
 
-// TODO: 12/19/17 Select serial port
-// TODO: 12/11/2017 Comments
-// TODO: 12/10/2017 change output on repeate enter clear screen
+// XTODO: 12/19/17 Select serial port
+// xTODO: 12/11/2017 Comments
+// XTODO: 12/10/2017 change output on repeate enter clear screen
 
-// TODO: 12/29/2017 docs
+// XTODO: 12/29/2017 docs
 //    get help message on what to do
 //            error message if not arduino
 //            message if not working with arduino
@@ -50,19 +55,19 @@ import javafx.scene.layout.Region;
 //
 //            set by set of what to do to do to get started
 //            example how to add number
-// TODO: 12/29/2017 install
-// TODO: 12/29/2017 setup
+// xTODO: 12/29/2017 install
+// xTODO: 12/29/2017 setup
 // xTODO: 12/29/2017 photo
 // xTODO: 12/29/2017 explain what is + = A etc
-// TODO: 12/29/2017 comments
-// TODO: 12/29/2017 set comment markers
+// xTODO: 12/29/2017 comments
+// xTODO: 12/29/2017 set comment markers
 
-// TODO: 12/29/2017 cleanup code
-// TODO: 12/29/2017         ans #
-// TODO: 12/29/2017         ans +
-// TODO: 12/29/2017         ans -
-// TODO: 12/29/2017         ans *
-// TODO: 12/29/2017         ans %
+// xTODO: 12/29/2017 cleanup code
+// xTODO: 12/29/2017         ans #
+// xTODO: 12/29/2017         ans +
+// xTODO: 12/29/2017         ans -
+// xTODO: 12/29/2017         ans *
+// xTODO: 12/29/2017         ans %
 
 public class UIController implements Initializable
 {
@@ -95,11 +100,19 @@ public class UIController implements Initializable
     @FXML
     private ComboBox<String> port_selection = new ComboBox<>(options);
 
+    /*
+    btnConnectPress()
+    this function connects to the arduino
+    when after the user has selected what PORT to connect the arduino
+    on.
 
+    port_selection.setEditable(false);
+    https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
+
+    * */
     @FXML
-    private void btn_connect_press()
+    private void btnConnectPress()
     {
-            // TODO: 12/29/2017 remove
             if(btn_connect.getText().equals("Connect"))
             {
                 try
@@ -107,7 +120,8 @@ public class UIController implements Initializable
                     if(port_selection.getValue() == null)
                     {
                         error("SELECT PORT: EXAMPLE      port > \"COM3\" or '/dev/ttyACM0'");
-                    } else
+                    }
+                    else
                     {
 
                         String portName = port_selection.getValue();
@@ -117,20 +131,32 @@ public class UIController implements Initializable
                         //set port to scanner mode lets reading in characters without quitting early
                         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 1000, 1000);
 
-                        //open port
-                        // TODO: 12/28/2017 error handling
+                        //open port arduino serial port
                         if(serialPort.openPort())
                         {
                             message.setText(String.format("Port: %s %n", portName));
                             alert(String.format("NOTE: If buttons NOT working, TRY other PORT, than port: %s %n", portName));
                             alert(String.format("Port Connected!: %s %n", portName));
                             btn_connect.setText("Disconnect");
-
-                            //https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ComboBoxBase.html#isEditable--
                             port_selection.setEditable(false);
                         }
 
-                        // TODO: 12/29/2017 comment
+
+
+
+                        /*
+                        * create a thread that monitors the characters
+                        * that come off the arduino
+                        * for each character that comes in
+                        * CALL
+                        *
+                        * calculator.setTextInput(line);
+                        *
+                        * witch calls the calculator class
+                        * sets up the math stuff, then returns the result
+                        * sets the javafx insterface to display the result
+                        * calculator > "11+33" set interface to "44"
+                        * */
                         Thread thread = new Thread()
                         {
                             @Override
@@ -198,12 +224,21 @@ public class UIController implements Initializable
                 }
             } else
             {
-                // TODO: 12/29/2017 comment
+
+                /*
+                * DISCONNECT
+                * when the button 'disconnect is pressed it
+                * Closes the connection to the arduino
+                * sets the desplay to blank
+                * allows the user to select a port
+                *
+                * also clears the display when trying to reconnect
+                * sets the current number of the calculator to blank
+                * */
                 serialPort.closePort();
                 btn_connect.setText("Connect");
                 port_selection.setEditable(true);
 
-                //clear calculator when disconnecting
                 output.setText("0.0");
                 input.setText("");
                 calculator.setMathOperator("");
@@ -221,7 +256,24 @@ public class UIController implements Initializable
         getSerialPorts();
     }
 
-    // TODO: 12/29/2017 comment
+    /*
+    * getSerialPorts()
+    * gets the current list of serial ports form
+    * the computer
+    * EI COM1, COM3
+    * or
+    * /dev/ttyACM0, /dev/ttyACM4'
+    *
+    * SerialPort.getCommPorts()
+    * returns a iterable list of ports
+    *
+    *
+    * port_selection.setItems(options);
+    * sets the dropdown 'PORT'
+    * menu to display the currently available ports
+    *
+    *
+    * */
     private void getSerialPorts()
     {
 
@@ -238,6 +290,17 @@ public class UIController implements Initializable
     }
 
 
+    /*
+    * clearHandler()
+    *
+    * function is called when the "CLEAR"
+    * button is pressed
+    *
+    * this function resets the display's
+    * output field
+    * input field
+    * The Calculator classes interal current number and input string
+    * */
     @FXML
     private void clearHandler()
     {
@@ -250,8 +313,14 @@ public class UIController implements Initializable
     }
 
 
-    // TODO: 12/29/2017 comment
     //HELPER FUNCTIONS
+
+
+    /*
+    * JavaFX Alerts abstraction
+    * alert_set( String message, Alert.AlertType alert_type )
+    * function deplays a popup message to the user
+    * */
     private void alert_set( String message, Alert.AlertType alert_type )
     {
         try
@@ -271,22 +340,28 @@ public class UIController implements Initializable
 
     }
 
-    // TODO: 12/29/2017 comment
+    /*
+    alert( String message )
+    creates a non warning message, with a giving
+    input
+    EXAMPLE:
+    alert("HELLO WORLD");
+    */
     private void alert( String message )
     {
         alert_set(message, Alert.AlertType.INFORMATION);
     }
-    // TODO: 12/29/2017 comment
     private void error( String error_message )
     {
         alert_set(error_message, Alert.AlertType.ERROR);
     }
-    // TODO: 12/29/2017 comment
+
     @Override
     public void initialize( URL url, ResourceBundle rb )
     {
         System.out.println("Calculator Started");
 
+        //Sets the user interface to have updated list of PORTS
         getSerialPorts();
     }
 

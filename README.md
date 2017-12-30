@@ -8,6 +8,23 @@ a Arduino that uses a physical keypad for input
 
 ## Install
 `
+
+---------------------------------------
+PHOTO VERSION OF INSTALL
+OPEN THE PHOTOS WITH the folder
+
+'How TO Setup'
+
+start with the hardware photos first
+hardware_vXX.jpg
+
+Then
+
+setup_vXX.png
+
+
+---------------------------------------
+
 ARDUINO SETUP
 
 Plug in arduino to computer
@@ -25,6 +42,7 @@ upload code to arduino
 for more help https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use?view=all
 
 
+---------------------------------------
 COMPUTER SETUP
 open project within Intellij IDEA
 from main

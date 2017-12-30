@@ -1,6 +1,10 @@
-// TODO: 12/29/2017 Header comment
 /*
  Java Final Project Calculator
+ This class handles the math calculations
+ for the calculator
+ all it does is take "12312" input and do the math for
+ it.
+
     by Oran C
     20171204
     oranbusiness@gmail.com
@@ -17,9 +21,25 @@ public class Calculator
     private String mathOperator = "";
     private double result = 0.0;
 
-    // TODO: 12/29/2017 comment
+    /*
+    * setTextInput( String keypress )
+    * This function Processes user input IE "1234A1234#"
+    * and does the math to calculate the result
+    * */
     public void setTextInput( String keypress )
     {
+        /*
+        * Delete Button
+        * Delete = "*" on the hardware keypad
+        * deletes the last character to be entered
+        *
+        * currentInput.substring(0, length - 1);
+        * removes the last character in the input
+        * and sets the current input
+        *
+        * EX:
+        * "1234" -> "123"
+        * */
         if(keypress.equals("*"))
         {
             int length = currentInput.length();
@@ -33,10 +53,13 @@ public class Calculator
                 System.err.print(String.format("Error Input is empty%n"));
             }
         }
+        /*
+        * ENTER and return results of calculation
+        * ENTER = "#" on the hardware keypad
+        * Parses current input
+        * */
         else if(currentInput.length() != 0 && isNumeric(currentInput) && keypress.equals("#"))
         {
-            // TODO: 12/29/2017 try catch block
-            // TODO: 12/29/2017     send user error message
             double currentNumber = 0.0;
             try
             {
@@ -67,12 +90,29 @@ public class Calculator
             currentInput = "";
 
         }
+        /*
+        returns result of add subract, *, /
+        and parses the current inptu
+        "1234A" = 1234 with math operator = +
+        * */
         else if(keypress.matches("[ABCD]"))
         {
             mathOperator = keypress;
-            result = Double.parseDouble(currentInput);
+            try
+            {
+                result = Double.parseDouble(currentInput);
+            }
+            catch(NumberFormatException err)
+            {
+                System.err.print(String.format("Error : input is Not numeric!%n"));
+            }
+
             currentInput = "";
         }
+        /*
+        * stores (saves or accumulates)the current input coming in from
+        * the Arduino's keypad
+        * */
         else
         {
             currentInput += keypress;
@@ -86,6 +126,7 @@ public class Calculator
     //https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java
     private static boolean isNumeric( String str )
     {
+        //if there is no number give to function ie "" empty
         if(str.isEmpty())
         {
             System.err.println("isNumeric(): is empty!=> " + str);

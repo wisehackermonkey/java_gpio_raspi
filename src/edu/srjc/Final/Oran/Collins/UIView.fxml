@@ -38,7 +38,7 @@
             <Font name="System Bold" size="18.0" />
          </font></Label>
       <ComboBox fx:id="port_selection" layoutX="14.0" layoutY="65.0" prefHeight="39.0" prefWidth="150.0" promptText="Port" />
-      <Button fx:id="btn_connect" layoutX="171.0" layoutY="65.0" mnemonicParsing="false" onAction="#btn_connect_press" prefHeight="39.0" prefWidth="129.0" text="Connect">
+      <Button fx:id="btn_connect" layoutX="171.0" layoutY="65.0" mnemonicParsing="false" onAction="#btnConnectPress" prefHeight="39.0" prefWidth="129.0" text="Connect">
          <font>
             <Font size="18.0" />
          </font></Button>
