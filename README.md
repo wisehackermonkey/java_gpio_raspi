@@ -12,7 +12,7 @@ a Arduino that uses a physical keypad for input
 PHOTO VERSION OF INSTALL
 OPEN THE PHOTOS WITH the folder
 
-'How TO Setup'
+'How To Setup'
 
 start with the hardware photos first
 hardware_vXX.jpg
